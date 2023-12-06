@@ -36,9 +36,7 @@
             this.textBoxAmount = new System.Windows.Forms.TextBox();
             this.textBoxPaymentDate = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.textBoxBookingIDPayments = new System.Windows.Forms.TextBox();
-            this.textBoxPaymentID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +75,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(298, 730);
+            this.label27.Location = new System.Drawing.Point(303, 660);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(62, 20);
@@ -87,7 +85,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(238, 675);
+            this.label28.Location = new System.Drawing.Point(243, 605);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(122, 20);
@@ -97,7 +95,7 @@
             // textBoxAmount
             // 
             this.textBoxAmount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxAmount.Location = new System.Drawing.Point(368, 716);
+            this.textBoxAmount.Location = new System.Drawing.Point(373, 646);
             this.textBoxAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxAmount.Name = "textBoxAmount";
             this.textBoxAmount.Size = new System.Drawing.Size(584, 45);
@@ -106,7 +104,7 @@
             // textBoxPaymentDate
             // 
             this.textBoxPaymentDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPaymentDate.Location = new System.Drawing.Point(368, 656);
+            this.textBoxPaymentDate.Location = new System.Drawing.Point(373, 586);
             this.textBoxPaymentDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxPaymentDate.Name = "textBoxPaymentDate";
             this.textBoxPaymentDate.Size = new System.Drawing.Size(584, 45);
@@ -115,40 +113,21 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(185, 620);
+            this.label12.Location = new System.Drawing.Point(190, 550);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(175, 20);
             this.label12.TabIndex = 42;
             this.label12.Text = "Номер бронирования:";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(297, 560);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(63, 20);
-            this.label13.TabIndex = 41;
-            this.label13.Text = "Номер:";
-            // 
             // textBoxBookingIDPayments
             // 
             this.textBoxBookingIDPayments.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxBookingIDPayments.Location = new System.Drawing.Point(368, 601);
+            this.textBoxBookingIDPayments.Location = new System.Drawing.Point(373, 531);
             this.textBoxBookingIDPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxBookingIDPayments.Name = "textBoxBookingIDPayments";
             this.textBoxBookingIDPayments.Size = new System.Drawing.Size(584, 45);
             this.textBoxBookingIDPayments.TabIndex = 40;
-            // 
-            // textBoxPaymentID
-            // 
-            this.textBoxPaymentID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPaymentID.Location = new System.Drawing.Point(368, 541);
-            this.textBoxPaymentID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxPaymentID.Name = "textBoxPaymentID";
-            this.textBoxPaymentID.Size = new System.Drawing.Size(584, 45);
-            this.textBoxPaymentID.TabIndex = 39;
             // 
             // AddFormPayments
             // 
@@ -160,9 +139,7 @@
             this.Controls.Add(this.textBoxAmount);
             this.Controls.Add(this.textBoxPaymentDate);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.textBoxBookingIDPayments);
-            this.Controls.Add(this.textBoxPaymentID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.buttonSave);
@@ -183,8 +160,6 @@
         private System.Windows.Forms.TextBox textBoxAmount;
         private System.Windows.Forms.TextBox textBoxPaymentDate;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBoxBookingIDPayments;
-        private System.Windows.Forms.TextBox textBoxPaymentID;
     }
 }

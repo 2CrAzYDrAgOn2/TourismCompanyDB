@@ -77,7 +77,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(288, 728);
+            this.label19.Location = new System.Drawing.Point(289, 723);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(74, 20);
@@ -87,7 +87,7 @@
             // textBoxPhone
             // 
             this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhone.Location = new System.Drawing.Point(370, 709);
+            this.textBoxPhone.Location = new System.Drawing.Point(371, 704);
             this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(584, 45);
@@ -96,7 +96,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(310, 673);
+            this.label16.Location = new System.Drawing.Point(311, 668);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(52, 20);
@@ -106,7 +106,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(277, 613);
+            this.label17.Location = new System.Drawing.Point(278, 608);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(85, 20);
@@ -116,7 +116,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmail.Location = new System.Drawing.Point(370, 654);
+            this.textBoxEmail.Location = new System.Drawing.Point(371, 649);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(584, 45);
@@ -125,7 +125,7 @@
             // textBoxLastName
             // 
             this.textBoxLastName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxLastName.Location = new System.Drawing.Point(370, 594);
+            this.textBoxLastName.Location = new System.Drawing.Point(371, 589);
             this.textBoxLastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(584, 45);
@@ -134,7 +134,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(318, 558);
+            this.label2.Location = new System.Drawing.Point(319, 553);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 20);
@@ -144,7 +144,7 @@
             // textBoxFirstName
             // 
             this.textBoxFirstName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxFirstName.Location = new System.Drawing.Point(370, 539);
+            this.textBoxFirstName.Location = new System.Drawing.Point(371, 534);
             this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(584, 45);
