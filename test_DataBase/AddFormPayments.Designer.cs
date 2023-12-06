@@ -43,10 +43,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(310, 54);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(207, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 32);
+            this.label1.Size = new System.Drawing.Size(71, 21);
             this.label1.TabIndex = 38;
             this.label1.Text = "Платеж";
             // 
@@ -54,19 +53,17 @@
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTitle.Location = new System.Drawing.Point(309, 15);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTitle.Location = new System.Drawing.Point(206, 10);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(267, 40);
+            this.labelTitle.Size = new System.Drawing.Size(175, 25);
             this.labelTitle.TabIndex = 37;
             this.labelTitle.Text = "Создание записи:";
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(422, 1018);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSave.Location = new System.Drawing.Point(281, 662);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(303, 86);
+            this.buttonSave.Size = new System.Drawing.Size(202, 56);
             this.buttonSave.TabIndex = 28;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -75,65 +72,59 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(303, 660);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Location = new System.Drawing.Point(202, 432);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(62, 20);
+            this.label27.Size = new System.Drawing.Size(44, 13);
             this.label27.TabIndex = 46;
             this.label27.Text = "Сумма:";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(243, 605);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Location = new System.Drawing.Point(162, 396);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(122, 20);
+            this.label28.Size = new System.Drawing.Size(82, 13);
             this.label28.TabIndex = 45;
             this.label28.Text = "Дата платежа:";
             // 
             // textBoxAmount
             // 
             this.textBoxAmount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxAmount.Location = new System.Drawing.Point(373, 646);
-            this.textBoxAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxAmount.Location = new System.Drawing.Point(249, 423);
             this.textBoxAmount.Name = "textBoxAmount";
-            this.textBoxAmount.Size = new System.Drawing.Size(584, 45);
+            this.textBoxAmount.Size = new System.Drawing.Size(391, 33);
             this.textBoxAmount.TabIndex = 44;
             // 
             // textBoxPaymentDate
             // 
             this.textBoxPaymentDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPaymentDate.Location = new System.Drawing.Point(373, 586);
-            this.textBoxPaymentDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxPaymentDate.Location = new System.Drawing.Point(249, 384);
             this.textBoxPaymentDate.Name = "textBoxPaymentDate";
-            this.textBoxPaymentDate.Size = new System.Drawing.Size(584, 45);
+            this.textBoxPaymentDate.Size = new System.Drawing.Size(391, 33);
             this.textBoxPaymentDate.TabIndex = 43;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(190, 550);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(127, 358);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(175, 20);
+            this.label12.Size = new System.Drawing.Size(119, 13);
             this.label12.TabIndex = 42;
             this.label12.Text = "Номер бронирования:";
             // 
             // textBoxBookingIDPayments
             // 
             this.textBoxBookingIDPayments.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxBookingIDPayments.Location = new System.Drawing.Point(373, 531);
-            this.textBoxBookingIDPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxBookingIDPayments.Location = new System.Drawing.Point(249, 345);
             this.textBoxBookingIDPayments.Name = "textBoxBookingIDPayments";
-            this.textBoxBookingIDPayments.Size = new System.Drawing.Size(584, 45);
+            this.textBoxBookingIDPayments.Size = new System.Drawing.Size(391, 33);
             this.textBoxBookingIDPayments.TabIndex = 40;
             // 
             // AddFormPayments
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 1122);
+            this.ClientSize = new System.Drawing.Size(768, 729);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.textBoxAmount);
@@ -143,7 +134,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.buttonSave);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AddFormPayments";
             this.Text = "Добавить платеж";
             this.ResumeLayout(false);
