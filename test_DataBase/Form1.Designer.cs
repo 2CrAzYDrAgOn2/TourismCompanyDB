@@ -33,12 +33,21 @@
             this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panelControl = new System.Windows.Forms.Panel();
+            this.buttonPDFClients = new System.Windows.Forms.Button();
             this.buttonSaveClients = new System.Windows.Forms.Button();
+            this.buttonExcelClients = new System.Windows.Forms.Button();
             this.buttonChangeClients = new System.Windows.Forms.Button();
+            this.buttonWordClients = new System.Windows.Forms.Button();
             this.buttonDeleteClients = new System.Windows.Forms.Button();
             this.buttonNewClients = new System.Windows.Forms.Button();
             this.labelControl = new System.Windows.Forms.Label();
             this.panelRecord = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.labelProdukciya = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
@@ -52,9 +61,6 @@
             this.textBoxSearchClients = new System.Windows.Forms.TextBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.buttonPDFClients = new System.Windows.Forms.Button();
-            this.buttonExcelClients = new System.Windows.Forms.Button();
-            this.buttonWordClients = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonPDFTours = new System.Windows.Forms.Button();
@@ -66,6 +72,14 @@
             this.buttonNewTours = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.textBoxEndDate = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBoxStartDate = new System.Windows.Forms.TextBox();
+            this.textBoxDestination = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxTourName = new System.Windows.Forms.TextBox();
@@ -89,6 +103,14 @@
             this.buttonNewBookings = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBoxTotalAmount = new System.Windows.Forms.TextBox();
+            this.textBoxNumberOfPersons = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.textBoxBookingDate = new System.Windows.Forms.TextBox();
+            this.textBoxTourIDBookings = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxClientIDBookings = new System.Windows.Forms.TextBox();
@@ -112,6 +134,10 @@
             this.buttonNewPayments = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBoxAmount = new System.Windows.Forms.TextBox();
+            this.textBoxPaymentDate = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxBookingIDPayments = new System.Windows.Forms.TextBox();
@@ -124,32 +150,6 @@
             this.buttonRefreshPayments = new System.Windows.Forms.Button();
             this.textBoxSearchPayments = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.textBoxLastName = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBoxStartDate = new System.Windows.Forms.TextBox();
-            this.textBoxDestination = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBoxPrice = new System.Windows.Forms.TextBox();
-            this.textBoxEndDate = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.textBoxBookingDate = new System.Windows.Forms.TextBox();
-            this.textBoxTourIDBookings = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBoxTotalAmount = new System.Windows.Forms.TextBox();
-            this.textBoxNumberOfPersons = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBoxAmount = new System.Windows.Forms.TextBox();
-            this.textBoxPaymentDate = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panelControl.SuspendLayout();
@@ -183,20 +183,20 @@
             this.информацияToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1152, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1152, 33);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(69, 30);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // информацияToolStripMenuItem
             // 
             this.информацияToolStripMenuItem.Name = "информацияToolStripMenuItem";
-            this.информацияToolStripMenuItem.Size = new System.Drawing.Size(137, 30);
+            this.информацияToolStripMenuItem.Size = new System.Drawing.Size(137, 29);
             this.информацияToolStripMenuItem.Text = "Информация";
             // 
             // tabPage1
@@ -230,6 +230,16 @@
             this.panelControl.Size = new System.Drawing.Size(312, 697);
             this.panelControl.TabIndex = 4;
             // 
+            // buttonPDFClients
+            // 
+            this.buttonPDFClients.Location = new System.Drawing.Point(4, 599);
+            this.buttonPDFClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonPDFClients.Name = "buttonPDFClients";
+            this.buttonPDFClients.Size = new System.Drawing.Size(303, 89);
+            this.buttonPDFClients.TabIndex = 4;
+            this.buttonPDFClients.Text = "Вывод в PDF";
+            this.buttonPDFClients.UseVisualStyleBackColor = true;
+            // 
             // buttonSaveClients
             // 
             this.buttonSaveClients.Location = new System.Drawing.Point(4, 302);
@@ -241,6 +251,16 @@
             this.buttonSaveClients.UseVisualStyleBackColor = true;
             this.buttonSaveClients.Click += new System.EventHandler(this.ButtonSaveDormitories_Click);
             // 
+            // buttonExcelClients
+            // 
+            this.buttonExcelClients.Location = new System.Drawing.Point(4, 500);
+            this.buttonExcelClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonExcelClients.Name = "buttonExcelClients";
+            this.buttonExcelClients.Size = new System.Drawing.Size(303, 89);
+            this.buttonExcelClients.TabIndex = 5;
+            this.buttonExcelClients.Text = "Вывод в Excel";
+            this.buttonExcelClients.UseVisualStyleBackColor = true;
+            // 
             // buttonChangeClients
             // 
             this.buttonChangeClients.Location = new System.Drawing.Point(4, 203);
@@ -251,6 +271,16 @@
             this.buttonChangeClients.Text = "Изменить";
             this.buttonChangeClients.UseVisualStyleBackColor = true;
             this.buttonChangeClients.Click += new System.EventHandler(this.ButtonChangeDormitories_Click);
+            // 
+            // buttonWordClients
+            // 
+            this.buttonWordClients.Location = new System.Drawing.Point(4, 401);
+            this.buttonWordClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonWordClients.Name = "buttonWordClients";
+            this.buttonWordClients.Size = new System.Drawing.Size(303, 89);
+            this.buttonWordClients.TabIndex = 6;
+            this.buttonWordClients.Text = "Вывод в Word";
+            this.buttonWordClients.UseVisualStyleBackColor = true;
             // 
             // buttonDeleteClients
             // 
@@ -304,10 +334,67 @@
             this.panelRecord.Size = new System.Drawing.Size(786, 740);
             this.panelRecord.TabIndex = 2;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(113, 330);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(74, 20);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "Телфон:";
+            // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPhone.Location = new System.Drawing.Point(195, 311);
+            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(584, 45);
+            this.textBoxPhone.TabIndex = 12;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(135, 275);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 20);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "Email:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(102, 220);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(85, 20);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "Фамилия:";
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEmail.Location = new System.Drawing.Point(195, 256);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(584, 45);
+            this.textBoxEmail.TabIndex = 9;
+            // 
+            // textBoxLastName
+            // 
+            this.textBoxLastName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLastName.Location = new System.Drawing.Point(195, 201);
+            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxLastName.Name = "textBoxLastName";
+            this.textBoxLastName.Size = new System.Drawing.Size(584, 45);
+            this.textBoxLastName.TabIndex = 8;
+            // 
             // labelProdukciya
             // 
             this.labelProdukciya.AutoSize = true;
-            this.labelProdukciya.Location = new System.Drawing.Point(143, 170);
+            this.labelProdukciya.Location = new System.Drawing.Point(143, 165);
             this.labelProdukciya.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelProdukciya.Name = "labelProdukciya";
             this.labelProdukciya.Size = new System.Drawing.Size(44, 20);
@@ -327,7 +414,7 @@
             // textBoxFirstName
             // 
             this.textBoxFirstName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxFirstName.Location = new System.Drawing.Point(195, 151);
+            this.textBoxFirstName.Location = new System.Drawing.Point(195, 146);
             this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(584, 45);
@@ -449,36 +536,6 @@
             this.tabControl1.Size = new System.Drawing.Size(1154, 1384);
             this.tabControl1.TabIndex = 3;
             this.tabControl1.Click += new System.EventHandler(this.ButtonClear_Click);
-            // 
-            // buttonPDFClients
-            // 
-            this.buttonPDFClients.Location = new System.Drawing.Point(4, 599);
-            this.buttonPDFClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonPDFClients.Name = "buttonPDFClients";
-            this.buttonPDFClients.Size = new System.Drawing.Size(303, 89);
-            this.buttonPDFClients.TabIndex = 4;
-            this.buttonPDFClients.Text = "Вывод в PDF";
-            this.buttonPDFClients.UseVisualStyleBackColor = true;
-            // 
-            // buttonExcelClients
-            // 
-            this.buttonExcelClients.Location = new System.Drawing.Point(4, 500);
-            this.buttonExcelClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonExcelClients.Name = "buttonExcelClients";
-            this.buttonExcelClients.Size = new System.Drawing.Size(303, 89);
-            this.buttonExcelClients.TabIndex = 5;
-            this.buttonExcelClients.Text = "Вывод в Excel";
-            this.buttonExcelClients.UseVisualStyleBackColor = true;
-            // 
-            // buttonWordClients
-            // 
-            this.buttonWordClients.Location = new System.Drawing.Point(4, 401);
-            this.buttonWordClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonWordClients.Name = "buttonWordClients";
-            this.buttonWordClients.Size = new System.Drawing.Size(303, 89);
-            this.buttonWordClients.TabIndex = 6;
-            this.buttonWordClients.Text = "Вывод в Word";
-            this.buttonWordClients.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -613,10 +670,86 @@
             this.panel2.Size = new System.Drawing.Size(786, 740);
             this.panel2.TabIndex = 2;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(135, 385);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(52, 20);
+            this.label21.TabIndex = 15;
+            this.label21.Text = "Цена:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(87, 330);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(100, 20);
+            this.label22.TabIndex = 14;
+            this.label22.Text = "Дата конца:";
+            // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPrice.Location = new System.Drawing.Point(195, 366);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(584, 45);
+            this.textBoxPrice.TabIndex = 13;
+            // 
+            // textBoxEndDate
+            // 
+            this.textBoxEndDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEndDate.Location = new System.Drawing.Point(195, 311);
+            this.textBoxEndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxEndDate.Name = "textBoxEndDate";
+            this.textBoxEndDate.Size = new System.Drawing.Size(584, 45);
+            this.textBoxEndDate.TabIndex = 12;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(76, 275);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(111, 20);
+            this.label18.TabIndex = 11;
+            this.label18.Text = "Дата начала:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(82, 220);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(105, 20);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "Назначение:";
+            // 
+            // textBoxStartDate
+            // 
+            this.textBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxStartDate.Location = new System.Drawing.Point(195, 256);
+            this.textBoxStartDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxStartDate.Name = "textBoxStartDate";
+            this.textBoxStartDate.Size = new System.Drawing.Size(584, 45);
+            this.textBoxStartDate.TabIndex = 9;
+            // 
+            // textBoxDestination
+            // 
+            this.textBoxDestination.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxDestination.Location = new System.Drawing.Point(195, 201);
+            this.textBoxDestination.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxDestination.Name = "textBoxDestination";
+            this.textBoxDestination.Size = new System.Drawing.Size(584, 45);
+            this.textBoxDestination.TabIndex = 8;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 170);
+            this.label2.Location = new System.Drawing.Point(62, 165);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 20);
@@ -636,7 +769,7 @@
             // textBoxTourName
             // 
             this.textBoxTourName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxTourName.Location = new System.Drawing.Point(195, 151);
+            this.textBoxTourName.Location = new System.Drawing.Point(195, 146);
             this.textBoxTourName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxTourName.Name = "textBoxTourName";
             this.textBoxTourName.Size = new System.Drawing.Size(584, 45);
@@ -874,10 +1007,86 @@
             this.panel5.Size = new System.Drawing.Size(786, 740);
             this.panel5.TabIndex = 2;
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(72, 385);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(115, 20);
+            this.label25.TabIndex = 15;
+            this.label25.Text = "Общая сумма:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(16, 330);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(171, 20);
+            this.label26.TabIndex = 14;
+            this.label26.Text = "Количество человек:";
+            // 
+            // textBoxTotalAmount
+            // 
+            this.textBoxTotalAmount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxTotalAmount.Location = new System.Drawing.Point(195, 366);
+            this.textBoxTotalAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxTotalAmount.Name = "textBoxTotalAmount";
+            this.textBoxTotalAmount.Size = new System.Drawing.Size(584, 45);
+            this.textBoxTotalAmount.TabIndex = 13;
+            // 
+            // textBoxNumberOfPersons
+            // 
+            this.textBoxNumberOfPersons.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxNumberOfPersons.Location = new System.Drawing.Point(195, 311);
+            this.textBoxNumberOfPersons.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxNumberOfPersons.Name = "textBoxNumberOfPersons";
+            this.textBoxNumberOfPersons.Size = new System.Drawing.Size(584, 45);
+            this.textBoxNumberOfPersons.TabIndex = 12;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(23, 275);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(164, 20);
+            this.label23.TabIndex = 11;
+            this.label23.Text = "Дата бронирования:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(86, 220);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(101, 20);
+            this.label24.TabIndex = 10;
+            this.label24.Text = "Номер тура:";
+            // 
+            // textBoxBookingDate
+            // 
+            this.textBoxBookingDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxBookingDate.Location = new System.Drawing.Point(195, 256);
+            this.textBoxBookingDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxBookingDate.Name = "textBoxBookingDate";
+            this.textBoxBookingDate.Size = new System.Drawing.Size(584, 45);
+            this.textBoxBookingDate.TabIndex = 9;
+            // 
+            // textBoxTourIDBookings
+            // 
+            this.textBoxTourIDBookings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxTourIDBookings.Location = new System.Drawing.Point(195, 201);
+            this.textBoxTourIDBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxTourIDBookings.Name = "textBoxTourIDBookings";
+            this.textBoxTourIDBookings.Size = new System.Drawing.Size(584, 45);
+            this.textBoxTourIDBookings.TabIndex = 8;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(57, 170);
+            this.label7.Location = new System.Drawing.Point(57, 165);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 20);
@@ -897,7 +1106,7 @@
             // textBoxClientIDBookings
             // 
             this.textBoxClientIDBookings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxClientIDBookings.Location = new System.Drawing.Point(195, 151);
+            this.textBoxClientIDBookings.Location = new System.Drawing.Point(195, 146);
             this.textBoxClientIDBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxClientIDBookings.Name = "textBoxClientIDBookings";
             this.textBoxClientIDBookings.Size = new System.Drawing.Size(584, 45);
@@ -1131,10 +1340,48 @@
             this.panel8.Size = new System.Drawing.Size(786, 740);
             this.panel8.TabIndex = 2;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(125, 270);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(62, 20);
+            this.label27.TabIndex = 11;
+            this.label27.Text = "Сумма:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(65, 220);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(122, 20);
+            this.label28.TabIndex = 10;
+            this.label28.Text = "Дата платежа:";
+            // 
+            // textBoxAmount
+            // 
+            this.textBoxAmount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxAmount.Location = new System.Drawing.Point(195, 256);
+            this.textBoxAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxAmount.Name = "textBoxAmount";
+            this.textBoxAmount.Size = new System.Drawing.Size(584, 45);
+            this.textBoxAmount.TabIndex = 9;
+            // 
+            // textBoxPaymentDate
+            // 
+            this.textBoxPaymentDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPaymentDate.Location = new System.Drawing.Point(195, 201);
+            this.textBoxPaymentDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxPaymentDate.Name = "textBoxPaymentDate";
+            this.textBoxPaymentDate.Size = new System.Drawing.Size(584, 45);
+            this.textBoxPaymentDate.TabIndex = 8;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 170);
+            this.label12.Location = new System.Drawing.Point(12, 165);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(175, 20);
@@ -1154,7 +1401,7 @@
             // textBoxBookingIDPayments
             // 
             this.textBoxBookingIDPayments.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxBookingIDPayments.Location = new System.Drawing.Point(195, 151);
+            this.textBoxBookingIDPayments.Location = new System.Drawing.Point(195, 146);
             this.textBoxBookingIDPayments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxBookingIDPayments.Name = "textBoxBookingIDPayments";
             this.textBoxBookingIDPayments.Size = new System.Drawing.Size(584, 45);
@@ -1258,253 +1505,6 @@
             this.label15.Size = new System.Drawing.Size(330, 96);
             this.label15.TabIndex = 0;
             this.label15.Text = "Платежи";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(135, 285);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 20);
-            this.label16.TabIndex = 11;
-            this.label16.Text = "Email:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(102, 225);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 20);
-            this.label17.TabIndex = 10;
-            this.label17.Text = "Фамилия:";
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmail.Location = new System.Drawing.Point(195, 266);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(584, 45);
-            this.textBoxEmail.TabIndex = 9;
-            // 
-            // textBoxLastName
-            // 
-            this.textBoxLastName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxLastName.Location = new System.Drawing.Point(195, 206);
-            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(584, 45);
-            this.textBoxLastName.TabIndex = 8;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(113, 340);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(74, 20);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "Телфон:";
-            // 
-            // textBoxPhone
-            // 
-            this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhone.Location = new System.Drawing.Point(195, 321);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(584, 45);
-            this.textBoxPhone.TabIndex = 12;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(76, 285);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(111, 20);
-            this.label18.TabIndex = 11;
-            this.label18.Text = "Дата начала:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(82, 225);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(105, 20);
-            this.label20.TabIndex = 10;
-            this.label20.Text = "Назначение:";
-            // 
-            // textBoxStartDate
-            // 
-            this.textBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxStartDate.Location = new System.Drawing.Point(195, 266);
-            this.textBoxStartDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxStartDate.Name = "textBoxStartDate";
-            this.textBoxStartDate.Size = new System.Drawing.Size(584, 45);
-            this.textBoxStartDate.TabIndex = 9;
-            // 
-            // textBoxDestination
-            // 
-            this.textBoxDestination.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxDestination.Location = new System.Drawing.Point(195, 206);
-            this.textBoxDestination.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxDestination.Name = "textBoxDestination";
-            this.textBoxDestination.Size = new System.Drawing.Size(584, 45);
-            this.textBoxDestination.TabIndex = 8;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(135, 400);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(52, 20);
-            this.label21.TabIndex = 15;
-            this.label21.Text = "Цена:";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(87, 340);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(100, 20);
-            this.label22.TabIndex = 14;
-            this.label22.Text = "Дата конца:";
-            // 
-            // textBoxPrice
-            // 
-            this.textBoxPrice.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPrice.Location = new System.Drawing.Point(195, 381);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(584, 45);
-            this.textBoxPrice.TabIndex = 13;
-            // 
-            // textBoxEndDate
-            // 
-            this.textBoxEndDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEndDate.Location = new System.Drawing.Point(195, 321);
-            this.textBoxEndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxEndDate.Name = "textBoxEndDate";
-            this.textBoxEndDate.Size = new System.Drawing.Size(584, 45);
-            this.textBoxEndDate.TabIndex = 12;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(23, 285);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(164, 20);
-            this.label23.TabIndex = 11;
-            this.label23.Text = "Дата бронирования:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(86, 225);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(101, 20);
-            this.label24.TabIndex = 10;
-            this.label24.Text = "Номер тура:";
-            // 
-            // textBoxBookingDate
-            // 
-            this.textBoxBookingDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxBookingDate.Location = new System.Drawing.Point(195, 266);
-            this.textBoxBookingDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxBookingDate.Name = "textBoxBookingDate";
-            this.textBoxBookingDate.Size = new System.Drawing.Size(584, 45);
-            this.textBoxBookingDate.TabIndex = 9;
-            // 
-            // textBoxTourIDBookings
-            // 
-            this.textBoxTourIDBookings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxTourIDBookings.Location = new System.Drawing.Point(195, 206);
-            this.textBoxTourIDBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxTourIDBookings.Name = "textBoxTourIDBookings";
-            this.textBoxTourIDBookings.Size = new System.Drawing.Size(584, 45);
-            this.textBoxTourIDBookings.TabIndex = 8;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(72, 400);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(115, 20);
-            this.label25.TabIndex = 15;
-            this.label25.Text = "Общая сумма:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(16, 340);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(171, 20);
-            this.label26.TabIndex = 14;
-            this.label26.Text = "Количество человек:";
-            // 
-            // textBoxTotalAmount
-            // 
-            this.textBoxTotalAmount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxTotalAmount.Location = new System.Drawing.Point(195, 381);
-            this.textBoxTotalAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxTotalAmount.Name = "textBoxTotalAmount";
-            this.textBoxTotalAmount.Size = new System.Drawing.Size(584, 45);
-            this.textBoxTotalAmount.TabIndex = 13;
-            // 
-            // textBoxNumberOfPersons
-            // 
-            this.textBoxNumberOfPersons.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxNumberOfPersons.Location = new System.Drawing.Point(195, 321);
-            this.textBoxNumberOfPersons.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxNumberOfPersons.Name = "textBoxNumberOfPersons";
-            this.textBoxNumberOfPersons.Size = new System.Drawing.Size(584, 45);
-            this.textBoxNumberOfPersons.TabIndex = 12;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(125, 280);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(62, 20);
-            this.label27.TabIndex = 11;
-            this.label27.Text = "Сумма:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(65, 225);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(122, 20);
-            this.label28.TabIndex = 10;
-            this.label28.Text = "Дата платежа:";
-            // 
-            // textBoxAmount
-            // 
-            this.textBoxAmount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxAmount.Location = new System.Drawing.Point(195, 266);
-            this.textBoxAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxAmount.Name = "textBoxAmount";
-            this.textBoxAmount.Size = new System.Drawing.Size(584, 45);
-            this.textBoxAmount.TabIndex = 9;
-            // 
-            // textBoxPaymentDate
-            // 
-            this.textBoxPaymentDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPaymentDate.Location = new System.Drawing.Point(195, 206);
-            this.textBoxPaymentDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxPaymentDate.Name = "textBoxPaymentDate";
-            this.textBoxPaymentDate.Size = new System.Drawing.Size(584, 45);
-            this.textBoxPaymentDate.TabIndex = 8;
             // 
             // Form1
             // 
