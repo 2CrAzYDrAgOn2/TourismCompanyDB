@@ -74,11 +74,11 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(193, 476);
+            this.label19.Location = new System.Drawing.Point(186, 476);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(49, 13);
+            this.label19.Size = new System.Drawing.Size(55, 13);
             this.label19.TabIndex = 29;
-            this.label19.Text = "Телфон:";
+            this.label19.Text = "Телефон:";
             // 
             // textBoxPhone
             // 
