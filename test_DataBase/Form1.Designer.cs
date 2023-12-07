@@ -236,6 +236,7 @@
             this.buttonPDFClients.TabIndex = 4;
             this.buttonPDFClients.Text = "Вывод в PDF";
             this.buttonPDFClients.UseVisualStyleBackColor = true;
+            this.buttonPDFClients.Click += new System.EventHandler(this.ButtonPDFClients_Click);
             // 
             // buttonSaveClients
             // 
@@ -245,7 +246,7 @@
             this.buttonSaveClients.TabIndex = 3;
             this.buttonSaveClients.Text = "Сохранить";
             this.buttonSaveClients.UseVisualStyleBackColor = true;
-            this.buttonSaveClients.Click += new System.EventHandler(this.ButtonSaveDormitories_Click);
+            this.buttonSaveClients.Click += new System.EventHandler(this.ButtonSaveClients_Click);
             // 
             // buttonExcelClients
             // 
@@ -255,6 +256,7 @@
             this.buttonExcelClients.TabIndex = 5;
             this.buttonExcelClients.Text = "Вывод в Excel";
             this.buttonExcelClients.UseVisualStyleBackColor = true;
+            this.buttonExcelClients.Click += new System.EventHandler(this.ButtonExcelClients_Click);
             // 
             // buttonChangeClients
             // 
@@ -264,7 +266,7 @@
             this.buttonChangeClients.TabIndex = 2;
             this.buttonChangeClients.Text = "Изменить";
             this.buttonChangeClients.UseVisualStyleBackColor = true;
-            this.buttonChangeClients.Click += new System.EventHandler(this.ButtonChangeDormitories_Click);
+            this.buttonChangeClients.Click += new System.EventHandler(this.ButtonChangeClients_Click);
             // 
             // buttonWordClients
             // 
@@ -274,6 +276,7 @@
             this.buttonWordClients.TabIndex = 6;
             this.buttonWordClients.Text = "Вывод в Word";
             this.buttonWordClients.UseVisualStyleBackColor = true;
+            this.buttonWordClients.Click += new System.EventHandler(this.ButtonWordClients_Click);
             // 
             // buttonDeleteClients
             // 
@@ -283,7 +286,7 @@
             this.buttonDeleteClients.TabIndex = 1;
             this.buttonDeleteClients.Text = "Удалить";
             this.buttonDeleteClients.UseVisualStyleBackColor = true;
-            this.buttonDeleteClients.Click += new System.EventHandler(this.ButtonDeleteDormitories_Click);
+            this.buttonDeleteClients.Click += new System.EventHandler(this.ButtonDeleteClients_Click);
             // 
             // buttonNewClients
             // 
@@ -293,7 +296,7 @@
             this.buttonNewClients.TabIndex = 0;
             this.buttonNewClients.Text = "Новая запись";
             this.buttonNewClients.UseVisualStyleBackColor = true;
-            this.buttonNewClients.Click += new System.EventHandler(this.ButtonNewDormitories_Click);
+            this.buttonNewClients.Click += new System.EventHandler(this.ButtonNewClients_Click);
             // 
             // labelControl
             // 
@@ -429,7 +432,7 @@
             this.dataGridViewClients.RowHeadersWidth = 62;
             this.dataGridViewClients.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewClients.TabIndex = 1;
-            this.dataGridViewClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewDormitories_CellClick);
+            this.dataGridViewClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewClients_CellClick);
             // 
             // panelTitle
             // 
@@ -482,7 +485,7 @@
             this.textBoxSearchClients.Name = "textBoxSearchClients";
             this.textBoxSearchClients.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchClients.TabIndex = 1;
-            this.textBoxSearchClients.TextChanged += new System.EventHandler(this.TextBoxSearchDormitories_TextChanged);
+            this.textBoxSearchClients.TextChanged += new System.EventHandler(this.TextBoxSearchClients_TextChanged);
             // 
             // labelTitle
             // 
@@ -544,6 +547,7 @@
             this.buttonPDFTours.TabIndex = 4;
             this.buttonPDFTours.Text = "Вывод в PDF";
             this.buttonPDFTours.UseVisualStyleBackColor = true;
+            this.buttonPDFTours.Click += new System.EventHandler(this.ButtonPDFTours_Click);
             // 
             // buttonSaveTours
             // 
@@ -553,6 +557,7 @@
             this.buttonSaveTours.TabIndex = 3;
             this.buttonSaveTours.Text = "Сохранить";
             this.buttonSaveTours.UseVisualStyleBackColor = true;
+            this.buttonSaveTours.Click += new System.EventHandler(this.ButtonSaveTours_Click);
             // 
             // buttonExcelTours
             // 
@@ -562,6 +567,7 @@
             this.buttonExcelTours.TabIndex = 5;
             this.buttonExcelTours.Text = "Вывод в Excel";
             this.buttonExcelTours.UseVisualStyleBackColor = true;
+            this.buttonExcelTours.Click += new System.EventHandler(this.ButtonExcelTours_Click);
             // 
             // buttonChangeTours
             // 
@@ -571,6 +577,7 @@
             this.buttonChangeTours.TabIndex = 2;
             this.buttonChangeTours.Text = "Изменить";
             this.buttonChangeTours.UseVisualStyleBackColor = true;
+            this.buttonChangeTours.Click += new System.EventHandler(this.ButtonChangeTours_Click);
             // 
             // buttonWordTours
             // 
@@ -580,6 +587,7 @@
             this.buttonWordTours.TabIndex = 6;
             this.buttonWordTours.Text = "Вывод в Word";
             this.buttonWordTours.UseVisualStyleBackColor = true;
+            this.buttonWordTours.Click += new System.EventHandler(this.ButtonWordTours_Click);
             // 
             // buttonDeleteTours
             // 
@@ -589,6 +597,7 @@
             this.buttonDeleteTours.TabIndex = 1;
             this.buttonDeleteTours.Text = "Удалить";
             this.buttonDeleteTours.UseVisualStyleBackColor = true;
+            this.buttonDeleteTours.Click += new System.EventHandler(this.ButtonDeleteTours_Click);
             // 
             // buttonNewTours
             // 
@@ -598,6 +607,7 @@
             this.buttonNewTours.TabIndex = 0;
             this.buttonNewTours.Text = "Новая запись";
             this.buttonNewTours.UseVisualStyleBackColor = true;
+            this.buttonNewTours.Click += new System.EventHandler(this.ButtonNewTours_Click);
             // 
             // label1
             // 
@@ -752,6 +762,7 @@
             this.dataGridViewTours.RowHeadersWidth = 62;
             this.dataGridViewTours.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewTours.TabIndex = 1;
+            this.dataGridViewTours.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewTours_CellClick);
             // 
             // panel3
             // 
@@ -784,6 +795,7 @@
             this.buttonClearTours.Size = new System.Drawing.Size(67, 67);
             this.buttonClearTours.TabIndex = 3;
             this.buttonClearTours.UseVisualStyleBackColor = true;
+            this.buttonClearTours.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // buttonRefreshTours
             // 
@@ -794,6 +806,7 @@
             this.buttonRefreshTours.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshTours.TabIndex = 2;
             this.buttonRefreshTours.UseVisualStyleBackColor = true;
+            this.buttonRefreshTours.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
             // textBoxSearchTours
             // 
@@ -802,6 +815,7 @@
             this.textBoxSearchTours.Name = "textBoxSearchTours";
             this.textBoxSearchTours.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchTours.TabIndex = 1;
+            this.textBoxSearchTours.TextChanged += new System.EventHandler(this.TextBoxSearchTours_TextChanged);
             // 
             // label5
             // 
@@ -850,6 +864,7 @@
             this.buttonPDFBookings.TabIndex = 4;
             this.buttonPDFBookings.Text = "Вывод в PDF";
             this.buttonPDFBookings.UseVisualStyleBackColor = true;
+            this.buttonPDFBookings.Click += new System.EventHandler(this.ButtonPDFBookings_Click);
             // 
             // buttonSaveBookings
             // 
@@ -859,6 +874,7 @@
             this.buttonSaveBookings.TabIndex = 3;
             this.buttonSaveBookings.Text = "Сохранить";
             this.buttonSaveBookings.UseVisualStyleBackColor = true;
+            this.buttonSaveBookings.Click += new System.EventHandler(this.ButtonSaveBookings_Click);
             // 
             // buttonExcelBookings
             // 
@@ -868,6 +884,7 @@
             this.buttonExcelBookings.TabIndex = 5;
             this.buttonExcelBookings.Text = "Вывод в Excel";
             this.buttonExcelBookings.UseVisualStyleBackColor = true;
+            this.buttonExcelBookings.Click += new System.EventHandler(this.ButtonExcelBookings_Click);
             // 
             // buttonChangeBookings
             // 
@@ -877,6 +894,7 @@
             this.buttonChangeBookings.TabIndex = 2;
             this.buttonChangeBookings.Text = "Изменить";
             this.buttonChangeBookings.UseVisualStyleBackColor = true;
+            this.buttonChangeBookings.Click += new System.EventHandler(this.ButtonChangeBookings_Click);
             // 
             // buttonWordBookings
             // 
@@ -886,6 +904,7 @@
             this.buttonWordBookings.TabIndex = 6;
             this.buttonWordBookings.Text = "Вывод в Word";
             this.buttonWordBookings.UseVisualStyleBackColor = true;
+            this.buttonWordBookings.Click += new System.EventHandler(this.ButtonWordBookings_Click);
             // 
             // buttonDeleteBookings
             // 
@@ -895,6 +914,7 @@
             this.buttonDeleteBookings.TabIndex = 1;
             this.buttonDeleteBookings.Text = "Удалить";
             this.buttonDeleteBookings.UseVisualStyleBackColor = true;
+            this.buttonDeleteBookings.Click += new System.EventHandler(this.ButtonDeleteBookings_Click);
             // 
             // buttonNewBookings
             // 
@@ -904,6 +924,7 @@
             this.buttonNewBookings.TabIndex = 0;
             this.buttonNewBookings.Text = "Новая запись";
             this.buttonNewBookings.UseVisualStyleBackColor = true;
+            this.buttonNewBookings.Click += new System.EventHandler(this.ButtonNewBookings_Click);
             // 
             // label6
             // 
@@ -1058,6 +1079,7 @@
             this.dataGridViewBookings.RowHeadersWidth = 62;
             this.dataGridViewBookings.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewBookings.TabIndex = 1;
+            this.dataGridViewBookings.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewBookings_CellClick);
             // 
             // panel6
             // 
@@ -1090,6 +1112,7 @@
             this.buttonClearBookings.Size = new System.Drawing.Size(67, 67);
             this.buttonClearBookings.TabIndex = 3;
             this.buttonClearBookings.UseVisualStyleBackColor = true;
+            this.buttonClearBookings.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // buttonRefreshBookings
             // 
@@ -1100,6 +1123,7 @@
             this.buttonRefreshBookings.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshBookings.TabIndex = 2;
             this.buttonRefreshBookings.UseVisualStyleBackColor = true;
+            this.buttonRefreshBookings.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
             // textBoxSearchBookings
             // 
@@ -1108,6 +1132,7 @@
             this.textBoxSearchBookings.Name = "textBoxSearchBookings";
             this.textBoxSearchBookings.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchBookings.TabIndex = 1;
+            this.textBoxSearchBookings.TextChanged += new System.EventHandler(this.TextBoxSearchBookings_TextChanged);
             // 
             // label10
             // 
@@ -1156,6 +1181,7 @@
             this.buttonPDFPayments.TabIndex = 4;
             this.buttonPDFPayments.Text = "Вывод в PDF";
             this.buttonPDFPayments.UseVisualStyleBackColor = true;
+            this.buttonPDFPayments.Click += new System.EventHandler(this.ButtonPDFPayments_Click);
             // 
             // buttonSavePayments
             // 
@@ -1165,6 +1191,7 @@
             this.buttonSavePayments.TabIndex = 3;
             this.buttonSavePayments.Text = "Сохранить";
             this.buttonSavePayments.UseVisualStyleBackColor = true;
+            this.buttonSavePayments.Click += new System.EventHandler(this.ButtonSavePayments_Click);
             // 
             // buttonExcelPayments
             // 
@@ -1174,6 +1201,7 @@
             this.buttonExcelPayments.TabIndex = 5;
             this.buttonExcelPayments.Text = "Вывод в Excel";
             this.buttonExcelPayments.UseVisualStyleBackColor = true;
+            this.buttonExcelPayments.Click += new System.EventHandler(this.ButtonExcelPayments_Click);
             // 
             // buttonChangePayments
             // 
@@ -1183,6 +1211,7 @@
             this.buttonChangePayments.TabIndex = 2;
             this.buttonChangePayments.Text = "Изменить";
             this.buttonChangePayments.UseVisualStyleBackColor = true;
+            this.buttonChangePayments.Click += new System.EventHandler(this.ButtonChangePayments_Click);
             // 
             // buttonWordPayments
             // 
@@ -1192,6 +1221,7 @@
             this.buttonWordPayments.TabIndex = 6;
             this.buttonWordPayments.Text = "Вывод в Word";
             this.buttonWordPayments.UseVisualStyleBackColor = true;
+            this.buttonWordPayments.Click += new System.EventHandler(this.ButtonWordPayments_Click);
             // 
             // buttonDeletePayments
             // 
@@ -1201,6 +1231,7 @@
             this.buttonDeletePayments.TabIndex = 1;
             this.buttonDeletePayments.Text = "Удалить";
             this.buttonDeletePayments.UseVisualStyleBackColor = true;
+            this.buttonDeletePayments.Click += new System.EventHandler(this.ButtonDeletePayments_Click);
             // 
             // buttonNewPayments
             // 
@@ -1210,6 +1241,7 @@
             this.buttonNewPayments.TabIndex = 0;
             this.buttonNewPayments.Text = "Новая запись";
             this.buttonNewPayments.UseVisualStyleBackColor = true;
+            this.buttonNewPayments.Click += new System.EventHandler(this.ButtonNewPayments_Click);
             // 
             // label11
             // 
@@ -1326,6 +1358,7 @@
             this.dataGridViewPayments.RowHeadersWidth = 62;
             this.dataGridViewPayments.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewPayments.TabIndex = 1;
+            this.dataGridViewPayments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewPayments_CellClick);
             // 
             // panel9
             // 
@@ -1358,6 +1391,7 @@
             this.buttonClearPayments.Size = new System.Drawing.Size(67, 67);
             this.buttonClearPayments.TabIndex = 3;
             this.buttonClearPayments.UseVisualStyleBackColor = true;
+            this.buttonClearPayments.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // buttonRefreshPayments
             // 
@@ -1368,6 +1402,7 @@
             this.buttonRefreshPayments.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshPayments.TabIndex = 2;
             this.buttonRefreshPayments.UseVisualStyleBackColor = true;
+            this.buttonRefreshPayments.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
             // textBoxSearchPayments
             // 
@@ -1376,6 +1411,7 @@
             this.textBoxSearchPayments.Name = "textBoxSearchPayments";
             this.textBoxSearchPayments.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchPayments.TabIndex = 1;
+            this.textBoxSearchPayments.TextChanged += new System.EventHandler(this.TextBoxSearchPayments_TextChanged);
             // 
             // label15
             // 

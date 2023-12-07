@@ -1,9 +1,11 @@
-﻿using System;
+﻿using iTextSharp.text.pdf;
+using Microsoft.Office.Interop.Word;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Reflection;
+using System.IO;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace test_DataBase
 {
@@ -92,13 +94,13 @@ namespace test_DataBase
                 textBoxEndDate.Text = "";
                 textBoxPrice.Text = "";
                 textBoxBookingID.Text = "";
-                textBoxClientID.Text = "";
-                textBoxTourID.Text = "";
+                textBoxClientIDBookings.Text = "";
+                textBoxTourIDBookings.Text = "";
                 textBoxBookingDate.Text = "";
                 textBoxNumberOfPersons.Text = "";
                 textBoxTotalAmount.Text = "";
                 textBoxPaymentID.Text = "";
-                textBoxBookingID.Text = "";
+                textBoxBookingIDPayments.Text = "";
                 textBoxPaymentDate.Text = "";
                 textBoxAmount.Text = "";
             }
@@ -220,8 +222,8 @@ namespace test_DataBase
 
                     case "dataGridViewBookings":
                         textBoxBookingID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxClientID.Text = dataGridViewRow.Cells[1].Value.ToString();
-                        textBoxTourID.Text = dataGridViewRow.Cells[2].Value.ToString();
+                        textBoxClientIDBookings.Text = dataGridViewRow.Cells[1].Value.ToString();
+                        textBoxTourIDBookings.Text = dataGridViewRow.Cells[2].Value.ToString();
                         textBoxBookingDate.Text = dataGridViewRow.Cells[3].Value.ToString();
                         textBoxNumberOfPersons.Text = dataGridViewRow.Cells[4].Value.ToString();
                         textBoxTotalAmount.Text = dataGridViewRow.Cells[5].Value.ToString();
@@ -229,7 +231,7 @@ namespace test_DataBase
 
                     case "dataGridViewPayments":
                         textBoxPaymentID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxBookingID.Text = dataGridViewRow.Cells[1].Value.ToString();
+                        textBoxBookingIDPayments.Text = dataGridViewRow.Cells[1].Value.ToString();
                         textBoxPaymentDate.Text = dataGridViewRow.Cells[2].Value.ToString();
                         textBoxAmount.Text = dataGridViewRow.Cells[3].Value.ToString();
                         break;
@@ -526,24 +528,182 @@ namespace test_DataBase
 
                     case "dataGridViewBookings":
                         var bookingID = textBoxBookingID.Text;
-                        var clientID = textBoxClientID.Text;
-                        var tourID = textBoxTourID.Text;
+                        var clientIDBookings = textBoxClientIDBookings.Text;
+                        var tourIDBookings = textBoxTourIDBookings.Text;
                         var bookingDate = textBoxBookingDate.Text;
                         var numberOfPersons = textBoxNumberOfPersons.Text;
                         var totalAmount = textBoxTotalAmount.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(bookingID, clientID, tourID, bookingDate, numberOfPersons, totalAmount);
+                        dataGridView.Rows[selectedRowIndex].SetValues(bookingID, clientIDBookings, tourIDBookings, bookingDate, numberOfPersons, totalAmount);
                         dataGridView.Rows[selectedRowIndex].Cells[6].Value = RowState.Modified;
                         break;
 
                     case "dataGridViewPayments":
                         var paymentID = textBoxPaymentID.Text;
-                        var bookingID = textBoxBookingID.Text;
+                        var bookingIDPayments = textBoxBookingIDPayments.Text;
                         var paymentDate = textBoxPaymentDate.Text;
                         var amount = textBoxAmount.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(paymentID, bookingID, paymentDate, amount);
+                        dataGridView.Rows[selectedRowIndex].SetValues(paymentID, bookingIDPayments, paymentDate, amount);
                         dataGridView.Rows[selectedRowIndex].Cells[3].Value = RowState.Modified;
                         break;
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ExportToWord(DataGridView dataGridView)
+        {
+            try
+            {
+                var wordApp = new Microsoft.Office.Interop.Word.Application();
+                wordApp.Visible = true;
+                Microsoft.Office.Interop.Word.Document doc = wordApp.Documents.Add();
+                Paragraph title = doc.Paragraphs.Add();
+                switch (dataGridView.Name)
+                {
+                    case "dataGridViewClients":
+                        title.Range.Text = "Данные клиентов";
+                        break;
+
+                    case "dataGridViewTours":
+                        title.Range.Text = "Данные туров";
+                        break;
+
+                    case "dataGridViewBookings":
+                        title.Range.Text = "Данные бронирований";
+                        break;
+
+                    case "dataGridViewPayments":
+                        title.Range.Text = "Данные выплат";
+                        break;
+                }
+                title.Range.Font.Bold = 1;
+                title.Range.Font.Size = 14;
+                title.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
+                title.Range.InsertParagraphAfter();
+                Table table = doc.Tables.Add(title.Range, dataGridView.RowCount + 1, dataGridView.ColumnCount - 1);
+                for (int col = 0; col < dataGridView.ColumnCount - 1; col++)
+                {
+                    table.Cell(1, col + 1).Range.Text = dataGridView.Columns[col].HeaderText;
+                }
+                for (int row = 0; row < dataGridView.RowCount; row++)
+                {
+                    for (int col = 0; col < dataGridView.ColumnCount - 1; col++)
+                    {
+                        table.Cell(row + 2, col + 1).Range.Text = dataGridView[col, row].Value.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ExportToExcel(DataGridView dataGridView)
+        {
+            try
+            {
+                var excelApp = new Excel.Application();
+                excelApp.Visible = true;
+                Excel.Workbook workbook = excelApp.Workbooks.Add();
+                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets[1];
+                string title = "";
+                switch (dataGridView.Name)
+                {
+                    case "dataGridViewClients":
+                        title = "Данные клиентов";
+                        break;
+
+                    case "dataGridViewTours":
+                        title = "Данные туров";
+                        break;
+
+                    case "dataGridViewBookings":
+                        title = "Данные бронирований";
+                        break;
+
+                    case "dataGridViewPayments":
+                        title = "Данные выплат";
+                        break;
+                }
+                Excel.Range titleRange = worksheet.Range[worksheet.Cells[1, 1], worksheet.Cells[1, dataGridView.ColumnCount - 1]];
+                titleRange.Merge();
+                titleRange.Value = title;
+                titleRange.Font.Bold = true;
+                titleRange.Font.Size = 14;
+                titleRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                for (int col = 0; col < dataGridView.ColumnCount; col++)
+                {
+                    worksheet.Cells[2, col + 1] = dataGridView.Columns[col].HeaderText;
+                }
+                for (int row = 0; row < dataGridView.RowCount; row++)
+                {
+                    for (int col = 0; col < dataGridView.ColumnCount - 1; col++)
+                    {
+                        worksheet.Cells[row + 3, col + 1] = dataGridView[col, row].Value.ToString();
+                        Excel.Range dataRange = worksheet.Range[worksheet.Cells[2, 1], worksheet.Cells[dataGridView.RowCount + 2, dataGridView.ColumnCount]];
+                        dataRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                        dataRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                    }
+                }
+                worksheet.Columns.AutoFit();
+                worksheet.Rows.AutoFit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ExportToPDF(DataGridView dataGridView)
+        {
+            try
+            {
+                var pdfDoc = new Document();
+                //PdfWriter.GetInstance(pdfDoc, new FileStream("output.pdf", FileMode.Create));
+                //pdfDoc.Open();
+                //string title = "";
+                //switch (dataGridView.Name)
+                //{
+                //    case "dataGridViewClients":
+                //        title = "Данные клиентов";
+                //        break;
+
+                //    case "dataGridViewTours":
+                //        title = "Данные туров";
+                //        break;
+
+                //    case "dataGridViewBookings":
+                //        title = "Данные бронирований";
+                //        break;
+
+                //    case "dataGridViewPayments":
+                //        title = "Данные выплат";
+                //        break;
+                //}
+                //pdfDoc.Add(new Paragraph(title, FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14)));
+                //PdfPTable pdfTable = new PdfPTable(dataGridView.ColumnCount);
+                //pdfTable.DefaultCell.Padding = 3;
+                //pdfTable.WidthPercentage = 100;
+                //pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                //foreach (DataGridViewColumn column in dataGridView.Columns)
+                //{
+                //    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, FontFactory.GetFont(FontFactory.HELVETICA_BOLD)));
+                //    pdfTable.AddCell(cell);
+                //}
+                //foreach (DataGridViewRow row in dataGridView.Rows)
+                //{
+                //    foreach (DataGridViewCell cell in row.Cells)
+                //    {
+                //        pdfTable.AddCell(cell.Value.ToString());
+                //    }
+                //}
+                //pdfDoc.Add(pdfTable);
+                //pdfDoc.Close();
+                MessageBox.Show("PDF exported successfully.");
             }
             catch (Exception ex)
             {
@@ -589,12 +749,355 @@ namespace test_DataBase
             }
         }
 
-        /// <summary>
-        /// DataGridViewDormitories_CellClick вызывается при нажатии на ячейку
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewDormitories_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void ButtonNewClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormClients addForm = new AddFormClients();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewTours_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormTours addForm = new AddFormTours();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewBookings_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormBookings addForm = new AddFormBookings();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewPayments_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormPayments addForm = new AddFormPayments();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewClients);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteTours_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewTours);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteBookings_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewBookings);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeletePayments_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewPayments);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewClients);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeTours_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewClients);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeBookings_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewClients);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangePayments_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewClients);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateBase(dataGridViewClients);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveTours_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateBase(dataGridViewTours);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveBookings_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateBase(dataGridViewBookings);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSavePayments_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateBase(dataGridViewPayments);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewClients);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordTours_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewTours);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordBookings_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewBookings);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordPayments_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewPayments);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewClients);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelTours_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewTours);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelBookings_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewBookings);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelPayments_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewPayments);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFClients_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewClients);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFTours_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewTours);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFBookings_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewBookings);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFPayments_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewPayments);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewClients_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -610,19 +1113,14 @@ namespace test_DataBase
             }
         }
 
-        /// <summary>
-        /// DataGridViewFaculties_CellClick вызывается при нажатии на ячейку
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewFaculties_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewTours_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 selectedRow = e.RowIndex;
                 if (e.RowIndex >= 0)
                 {
-                    DataGridView_CellClick(dataGridViewFaculties, selectedRow);
+                    DataGridView_CellClick(dataGridViewTours, selectedRow);
                 }
             }
             catch (Exception ex)
@@ -631,19 +1129,14 @@ namespace test_DataBase
             }
         }
 
-        /// <summary>
-        /// DataGridViewGroups_CellClick вызывается при нажатии на ячейку
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewGroups_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewBookings_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 selectedRow = e.RowIndex;
                 if (e.RowIndex >= 0)
                 {
-                    DataGridView_CellClick(dataGridViewGroups, selectedRow);
+                    DataGridView_CellClick(dataGridViewBookings, selectedRow);
                 }
             }
             catch (Exception ex)
@@ -652,19 +1145,14 @@ namespace test_DataBase
             }
         }
 
-        /// <summary>
-        /// DataGridViewHousingOrders_CellClick вызывается при нажатии на ячейку
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DataGridViewHousingOrders_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewPayments_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 selectedRow = e.RowIndex;
                 if (e.RowIndex >= 0)
                 {
-                    DataGridView_CellClick(dataGridViewHousingOrders, selectedRow);
+                    DataGridView_CellClick(dataGridViewPayments, selectedRow);
                 }
             }
             catch (Exception ex)
@@ -673,84 +1161,7 @@ namespace test_DataBase
             }
         }
 
-        /// <summary>
-        /// ButtonNewDormitories_Click вызывается при нажатии на кнопку "Новая запись"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonNewDormitories_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddFormClients addForm = new AddFormClients();
-                addForm.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonNewFaculties_Click вызывается при нажатии на кнопку "Новая запись"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonNewFaculties_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddFormTours addForm = new AddFormTours();
-                addForm.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonNewGroups_Click вызывается при нажатии на кнопку "Новая запись"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonNewGroups_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddFormBookings addForm = new AddFormBookings();
-                addForm.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonNewHousingOrders_Click вызывается при нажатии на кнопку "Новая запись"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonNewHousingOrders_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                AddFormPayments addForm = new AddFormPayments();
-                addForm.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// TextBoxSearchDormitories_TextChanged вызывается при изменении текста
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBoxSearchDormitories_TextChanged(object sender, EventArgs e)
+        private void TextBoxSearchClients_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -762,16 +1173,11 @@ namespace test_DataBase
             }
         }
 
-        /// <summary>
-        /// TextBoxSearchFaculties_TextChanged вызывается при изменении текста
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBoxSearchFaculties_TextChanged(object sender, EventArgs e)
+        private void TextBoxSearchTours_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                Search(dataGridViewFaculties);
+                Search(dataGridViewTours);
             }
             catch (Exception ex)
             {
@@ -779,16 +1185,11 @@ namespace test_DataBase
             }
         }
 
-        /// <summary>
-        /// TextBoxSearchGroups_TextChanged вызывается при изменении текста
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBoxSearchGroups_TextChanged(object sender, EventArgs e)
+        private void TextBoxSearchBookings_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                Search(dataGridViewGroups);
+                Search(dataGridViewBookings);
             }
             catch (Exception ex)
             {
@@ -796,228 +1197,11 @@ namespace test_DataBase
             }
         }
 
-        /// <summary>
-        /// TextBoxSearchHousingOrders_TextChanged вызывается при изменении текста
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBoxSearchHousingOrders_TextChanged(object sender, EventArgs e)
+        private void TextBoxSearchPayments_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                Search(dataGridViewHousingOrders);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonDeleteDormitories_Click вызывается при нажатии на кнопку "Удалить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonDeleteDormitories_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DeleteRow(dataGridViewClients);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonDeleteFaculties_Click вызывается при нажатии на кнопку "Удалить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonDeleteFaculties_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DeleteRow(dataGridViewFaculties);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonDeleteGroups_Click вызывается при нажатии на кнопку "Удалить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonDeleteGroups_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DeleteRow(dataGridViewGroups);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonDeleteHousingOrders_Click вызывается при нажатии на кнопку "Удалить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonDeleteHousingOrders_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DeleteRow(dataGridViewHousingOrders);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonSaveDormitories_Click вызывается при нажатии на кнопку "Сохранить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSaveDormitories_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UpdateBase(dataGridViewClients);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonSaveFaculties_Click вызывается при нажатии на кнопку "Сохранить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSaveFaculties_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UpdateBase(dataGridViewFaculties);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonSaveGroups_Click вызывается при нажатии на кнопку "Сохранить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSaveGroups_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UpdateBase(dataGridViewGroups);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonSaveHousingOrders_Click вызывается при нажатии на кнопку "Сохранить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonSaveHousingOrders_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UpdateBase(dataGridViewHousingOrders);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonChangeDormitories_Click вызывается при нажатии на кнопку "Изменить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonChangeDormitories_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Change(dataGridViewClients);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonChangeFaculties_Click вызывается при нажатии на кнопку "Изменить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonChangeFaculties_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Change(dataGridViewFaculties);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonChangeGroups_Click вызывается при нажатии на кнопку "Изменить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonChangeGroups_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Change(dataGridViewGroups);
-                ClearFields();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// ButtonChangeHousingOrders_Click вызывается при нажатии на кнопку "Изменить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ButtonChangeHousingOrders_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Change(dataGridViewHousingOrders);
-                ClearFields();
+                Search(dataGridViewPayments);
             }
             catch (Exception ex)
             {

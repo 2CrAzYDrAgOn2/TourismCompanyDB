@@ -24,8 +24,11 @@ namespace test_DataBase
             try
             {
                 dataBase.OpenConnection();
-                var dormitoryName = textBoxDormitoryName.Text;
-                var addQuery = $"insert into Dormitories (DormitoryName) values ('{dormitoryName}')";
+                var firstName = textBoxFirstName.Text;
+                var lastName = textBoxLastName.Text;
+                var email = textBoxEmail.Text;
+                var phone = textBoxPhone.Text;
+                var addQuery = $"insert into Clients (FirstName, LastName, Email, Phone) values ('{firstName}', '{lastName}', '{email}', '{phone}')";
                 var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());
                 sqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);

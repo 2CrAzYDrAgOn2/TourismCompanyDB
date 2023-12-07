@@ -23,11 +23,12 @@ namespace test_DataBase
         {
             try
             {
-                dataBase.OpenConnection();
-                var orderNumber = textBoxOrderNumber.Text;
-                if (int.TryParse(textBoxFacultyID.Text, out int facultyID) && int.TryParse(textBoxStudentID.Text, out int studentID))
+                if (int.TryParse(textBoxBookingIDPayments.Text, out int bookingID))
                 {
-                    var addQuery = $"insert into HousingOrders (OrderNumber, FacultyID, StudentID) values ('{orderNumber}', '{facultyID}', '{studentID}')";
+                    dataBase.OpenConnection();
+                    var paymentDate = textBoxPaymentDate.Text;
+                    var amount = textBoxAmount.Text;
+                    var addQuery = $"insert into Payments (BookingID, PaymentDate, Amount) values ('{bookingID}', '{paymentDate}', '{amount}')";
                     var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());
                     sqlCommand.ExecuteNonQuery();
                     MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
