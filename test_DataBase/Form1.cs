@@ -338,37 +338,37 @@ namespace test_DataBase
                     case "dataGridViewClients":
                         if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
                         {
-                            dataGridView.Rows[index].Cells[4].Value = RowState.Deleted;
+                            dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
                             return;
                         }
-                        dataGridView.Rows[index].Cells[4].Value = RowState.Deleted;
+                        dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
                         break;
 
                     case "dataGridViewTours":
                         if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
                         {
-                            dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
+                            dataGridView.Rows[index].Cells[6].Value = RowState.Deleted;
                             return;
                         }
-                        dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
+                        dataGridView.Rows[index].Cells[6].Value = RowState.Deleted;
                         break;
 
                     case "dataGridViewBookings":
                         if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
                         {
-                            dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
+                            dataGridView.Rows[index].Cells[6].Value = RowState.Deleted;
                             return;
                         }
-                        dataGridView.Rows[index].Cells[5].Value = RowState.Deleted;
+                        dataGridView.Rows[index].Cells[6].Value = RowState.Deleted;
                         break;
 
                     case "dataGridViewPayments":
                         if (dataGridView.Rows[index].Cells[0].Value.ToString() == string.Empty)
                         {
-                            dataGridView.Rows[index].Cells[3].Value = RowState.Deleted;
+                            dataGridView.Rows[index].Cells[4].Value = RowState.Deleted;
                             return;
                         }
-                        dataGridView.Rows[index].Cells[3].Value = RowState.Deleted;
+                        dataGridView.Rows[index].Cells[4].Value = RowState.Deleted;
                         break;
                 }
             }
@@ -392,7 +392,7 @@ namespace test_DataBase
                     switch (dataGridView.Name)
                     {
                         case "dataGridViewClients":
-                            var rowStateClients = (RowState)dataGridView.Rows[index].Cells[2].Value;
+                            var rowStateClients = (RowState)dataGridView.Rows[index].Cells[5].Value;
                             if (rowStateClients == RowState.Existed)
                             {
                                 continue;
@@ -418,7 +418,7 @@ namespace test_DataBase
                             break;
 
                         case "dataGridViewTours":
-                            var rowStateTours = (RowState)dataGridView.Rows[index].Cells[2].Value;
+                            var rowStateTours = (RowState)dataGridView.Rows[index].Cells[6].Value;
                             if (rowStateTours == RowState.Existed)
                             {
                                 continue;
@@ -445,7 +445,7 @@ namespace test_DataBase
                             break;
 
                         case "dataGridViewBookings":
-                            var rowStateBookings = (RowState)dataGridView.Rows[index].Cells[2].Value;
+                            var rowStateBookings = (RowState)dataGridView.Rows[index].Cells[6].Value;
                             if (rowStateBookings == RowState.Existed)
                             {
                                 continue;
@@ -557,7 +557,7 @@ namespace test_DataBase
                         var paymentDate = textBoxPaymentDate.Text;
                         var amount = textBoxAmount.Text;
                         dataGridView.Rows[selectedRowIndex].SetValues(paymentID, bookingIDPayments, paymentDate, amount);
-                        dataGridView.Rows[selectedRowIndex].Cells[3].Value = RowState.Modified;
+                        dataGridView.Rows[selectedRowIndex].Cells[4].Value = RowState.Modified;
                         break;
                 }
             }
