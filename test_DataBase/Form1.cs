@@ -1,11 +1,10 @@
-﻿using iTextSharp.text.pdf;
-using Microsoft.Office.Interop.Word;
+﻿using Microsoft.Office.Interop.Word;
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.IO;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using iText.Kernel.Pdf;
 
 namespace test_DataBase
 {
@@ -662,48 +661,40 @@ namespace test_DataBase
         {
             try
             {
-                var pdfDoc = new Document();
-                //PdfWriter.GetInstance(pdfDoc, new FileStream("output.pdf", FileMode.Create));
-                //pdfDoc.Open();
-                //string title = "";
-                //switch (dataGridView.Name)
-                //{
-                //    case "dataGridViewClients":
-                //        title = "Данные клиентов";
-                //        break;
+                string filePath = "";
+                var pdfWriter = new PdfWriter(filePath);
+                var pdfDocument = new PdfDocument(pdfWriter);
+                var pdfDoc = new iText.Layout.Document(pdfDocument);
+                string title = "";
+                switch (dataGridView.Name)
+                {
+                    case "dataGridViewClients":
+                        title = "Данные клиентов";
+                        break;
 
-                //    case "dataGridViewTours":
-                //        title = "Данные туров";
-                //        break;
+                    case "dataGridViewTours":
+                        title = "Данные туров";
+                        break;
 
-                //    case "dataGridViewBookings":
-                //        title = "Данные бронирований";
-                //        break;
+                    case "dataGridViewBookings":
+                        title = "Данные бронирований";
+                        break;
 
-                //    case "dataGridViewPayments":
-                //        title = "Данные выплат";
-                //        break;
-                //}
-                //pdfDoc.Add(new Paragraph(title, FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14)));
-                //PdfPTable pdfTable = new PdfPTable(dataGridView.ColumnCount);
-                //pdfTable.DefaultCell.Padding = 3;
-                //pdfTable.WidthPercentage = 100;
-                //pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-                //foreach (DataGridViewColumn column in dataGridView.Columns)
-                //{
-                //    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, FontFactory.GetFont(FontFactory.HELVETICA_BOLD)));
-                //    pdfTable.AddCell(cell);
-                //}
-                //foreach (DataGridViewRow row in dataGridView.Rows)
-                //{
-                //    foreach (DataGridViewCell cell in row.Cells)
-                //    {
-                //        pdfTable.AddCell(cell.Value.ToString());
-                //    }
-                //}
-                //pdfDoc.Add(pdfTable);
-                //pdfDoc.Close();
-                MessageBox.Show("PDF exported successfully.");
+                    case "dataGridViewPayments":
+                        title = "Данные выплат";
+                        break;
+                }
+                pdfDoc.Add(new iText.Layout.Element.Paragraph(title));
+                foreach (DataGridViewRow row in dataGridView.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        pdfDoc.Add(new iText.Layout.Element.Paragraph(cell.Value.ToString()));
+                    }
+                    pdfDoc.Add(new iText.Layout.Element.AreaBreak());
+                }
+                pdfDoc.Close();
+                MessageBox.Show("PDF успешно экспортирован.");
             }
             catch (Exception ex)
             {
