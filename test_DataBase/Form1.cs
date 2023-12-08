@@ -793,15 +793,8 @@ namespace test_DataBase
         {
             try
             {
-                if (admin)
-                {
-                    AddFormTours addForm = new AddFormTours();
-                    addForm.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Отказано в доступе");
-                }
+                AddFormTours addForm = new AddFormTours();
+                addForm.Show();
             }
             catch (Exception ex)
             {
@@ -852,15 +845,8 @@ namespace test_DataBase
         {
             try
             {
-                if (admin)
-                {
-                    DeleteRow(dataGridViewTours);
-                    ClearFields();
-                }
-                else
-                {
-                    MessageBox.Show("Отказано в доступе");
-                }
+                DeleteRow(dataGridViewTours);
+                ClearFields();
             }
             catch (Exception ex)
             {
@@ -911,15 +897,8 @@ namespace test_DataBase
         {
             try
             {
-                if (admin)
-                {
-                    Change(dataGridViewClients);
-                    ClearFields();
-                }
-                else
-                {
-                    MessageBox.Show("Отказано в доступе");
-                }
+                Change(dataGridViewClients);
+                ClearFields();
             }
             catch (Exception ex)
             {
@@ -969,7 +948,14 @@ namespace test_DataBase
         {
             try
             {
-                UpdateBase(dataGridViewTours);
+                if (admin)
+                {
+                    UpdateBase(dataGridViewTours);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостаточно прав!");
+                }
             }
             catch (Exception ex)
             {
