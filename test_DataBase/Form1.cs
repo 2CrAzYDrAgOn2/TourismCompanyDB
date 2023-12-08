@@ -1,14 +1,15 @@
-﻿using Microsoft.Office.Interop.Word;
+﻿using iText.IO.Font;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf;
+using iText.Layout.Properties;
+using Microsoft.Office.Interop.Word;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
-using iText.Kernel.Pdf;
-using System.IO;
-using System.Text;
-using iText.IO.Font;
-using iText.Kernel.Font;
 
 namespace test_DataBase
 {
@@ -689,23 +690,23 @@ namespace test_DataBase
                         title = "Данные выплат";
                         break;
                 }
-                pdfDoc.Add(new iText.Layout.Element.Paragraph(title).SetFont(timesFont).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
-                var headerData = new StringBuilder();
-                int columnCount = dataGridView.Columns.Count;
-                for (int i = 0; i < columnCount - 1; i++)
+                pdfDoc.Add(new iText.Layout.Element.Paragraph(title).SetFont(timesFont).SetTextAlignment(TextAlignment.CENTER));
+                iText.Layout.Element.Table table = new iText.Layout.Element.Table(dataGridView.Columns.Count - 1);
+                table.UseAllAvailableWidth();
+                var columnsList = dataGridView.Columns.Cast<DataGridViewColumn>().ToList();
+                foreach (DataGridViewColumn column in columnsList.Take(dataGridView.Columns.Count - 1))
                 {
-                    headerData.Append(dataGridView.Columns[i].HeaderText).Append(" ");
+                    iText.Layout.Element.Cell headerCell = new iText.Layout.Element.Cell().Add(new iText.Layout.Element.Paragraph(column.HeaderText).SetFont(timesFont));
+                    table.AddHeaderCell(headerCell);
                 }
-                pdfDoc.Add(new iText.Layout.Element.Paragraph(headerData.ToString()).SetFont(timesFont));
                 foreach (DataGridViewRow row in dataGridView.Rows)
                 {
-                    var rowData = new StringBuilder();
-                    for (int i = 0; i < columnCount - 1; i++)
+                    foreach (DataGridViewCell cell in row.Cells.Cast<DataGridViewCell>().Take(dataGridView.Columns.Count - 1))
                     {
-                        rowData.Append(row.Cells[i].Value.ToString()).Append(" ");
+                        table.AddCell(new iText.Layout.Element.Cell().Add(new iText.Layout.Element.Paragraph(cell.Value.ToString()).SetFont(timesFont)));
                     }
-                    pdfDoc.Add(new iText.Layout.Element.Paragraph(rowData.ToString()).SetFont(timesFont));
                 }
+                pdfDoc.Add(table);
                 pdfDoc.Close();
                 MessageBox.Show("PDF успешно экспортирован.");
             }
