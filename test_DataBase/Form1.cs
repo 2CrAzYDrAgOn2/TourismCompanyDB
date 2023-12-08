@@ -41,6 +41,10 @@ namespace test_DataBase
             }
         }
 
+        /// <summary>
+        /// SetAdminStatus проверяет доступ
+        /// </summary>
+        /// <param name="isAdmin"></param>
         public void SetAdminStatus(bool isAdmin)
         {
             admin = isAdmin;
@@ -563,6 +567,10 @@ namespace test_DataBase
             }
         }
 
+        /// <summary>
+        /// ExportToWord вызывается при экспорте данных в Word
+        /// </summary>
+        /// <param name="dataGridView"></param>
         private void ExportToWord(DataGridView dataGridView)
         {
             try
@@ -612,6 +620,10 @@ namespace test_DataBase
             }
         }
 
+        /// <summary>
+        /// ExportToExcel вызывается при экспорте данных в Excel
+        /// </summary>
+        /// <param name="dataGridView"></param>
         private void ExportToExcel(DataGridView dataGridView)
         {
             try
@@ -668,6 +680,10 @@ namespace test_DataBase
             }
         }
 
+        /// <summary>
+        /// ExportToPDF вызывается при экспорте данных в PDF
+        /// </summary>
+        /// <param name="dataGridView"></param>
         private void ExportToPDF(DataGridView dataGridView)
         {
             try
@@ -782,6 +798,10 @@ namespace test_DataBase
                     AddFormTours addForm = new AddFormTours();
                     addForm.Show();
                 }
+                else
+                {
+                    MessageBox.Show("Отказано в доступе");
+                }
             }
             catch (Exception ex)
             {
@@ -837,6 +857,10 @@ namespace test_DataBase
                     DeleteRow(dataGridViewTours);
                     ClearFields();
                 }
+                else
+                {
+                    MessageBox.Show("Отказано в доступе");
+                }
             }
             catch (Exception ex)
             {
@@ -891,6 +915,10 @@ namespace test_DataBase
                 {
                     Change(dataGridViewClients);
                     ClearFields();
+                }
+                else
+                {
+                    MessageBox.Show("Отказано в доступе");
                 }
             }
             catch (Exception ex)
