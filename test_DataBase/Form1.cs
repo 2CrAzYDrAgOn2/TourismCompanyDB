@@ -140,15 +140,15 @@ namespace test_DataBase
                         break;
 
                     case "dataGridViewTours":
-                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), iDataRecord.GetString(2), iDataRecord.GetDateTime(3), iDataRecord.GetDateTime(4), iDataRecord.GetDecimal(5), RowState.Modified);
+                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetString(1), iDataRecord.GetString(2), iDataRecord.GetDateTime(3), iDataRecord.GetDateTime(4), iDataRecord.GetInt32(5), RowState.Modified);
                         break;
 
                     case "dataGridViewBookings":
-                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetInt32(1), iDataRecord.GetInt32(2), iDataRecord.GetDateTime(3), iDataRecord.GetInt32(4), iDataRecord.GetDecimal(5), RowState.Modified);
+                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetInt32(1), iDataRecord.GetInt32(2), iDataRecord.GetDateTime(3), iDataRecord.GetInt32(4), iDataRecord.GetInt32(5), RowState.Modified);
                         break;
 
                     case "dataGridViewPayments":
-                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetInt32(1), iDataRecord.GetDateTime(2), iDataRecord.GetDecimal(3), RowState.Modified);
+                        dataGridView.Rows.Add(iDataRecord.GetInt32(0), iDataRecord.GetInt32(1), iDataRecord.GetDateTime(2), iDataRecord.GetInt32(3), RowState.Modified);
                         break;
                 }
             }
@@ -793,8 +793,15 @@ namespace test_DataBase
         {
             try
             {
-                AddFormTours addForm = new AddFormTours();
-                addForm.Show();
+                if (admin)
+                {
+                    AddFormTours addForm = new AddFormTours();
+                    addForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостаточно прав!");
+                }
             }
             catch (Exception ex)
             {

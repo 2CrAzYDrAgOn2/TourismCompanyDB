@@ -15,7 +15,7 @@ CREATE TABLE Tours (
     Destination NVARCHAR(100),
     StartDate DATE,
     EndDate DATE,
-    Price DECIMAL(10, 2)
+    Price INT
 );
 
 CREATE TABLE Bookings (
@@ -24,7 +24,7 @@ CREATE TABLE Bookings (
     TourID INT,
     BookingDate DATE,
     NumberOfPersons INT,
-    TotalAmount DECIMAL(10, 2),
+    TotalAmount INT,
 	FOREIGN KEY (ClientID) REFERENCES Clients(ClientID),
 	FOREIGN KEY (TourID) REFERENCES Tours(TourID)
 );
@@ -33,7 +33,7 @@ CREATE TABLE Payments (
     PaymentID INT PRIMARY KEY IDENTITY(1,1),
     BookingID INT,
     PaymentDate DATE,
-    Amount DECIMAL(10, 2),
+    Amount INT,
 	FOREIGN KEY (BookingID) REFERENCES Bookings(BookingID)
 );
 
@@ -51,18 +51,18 @@ VALUES
 
 INSERT INTO Tours (TourName, Destination, StartDate, EndDate, Price)
 VALUES
-    ('Отпуск на море', 'Гоа, Индия', '2023-05-15', '2023-05-25', 1200.00),
-    ('Горнолыжный курорт', 'Альпы, Швейцария', '2023-12-01', '2023-12-10', 1800.00);
+    ('Отпуск на море', 'Гоа, Индия', '2023-05-15', '2023-05-25', 1200),
+    ('Горнолыжный курорт', 'Альпы, Швейцария', '2023-12-01', '2023-12-10', 1800);
 
 INSERT INTO Bookings (ClientID, TourID, BookingDate, NumberOfPersons, TotalAmount)
 VALUES
-    (1, 1, '2023-04-01', 2, 2400.00),
-    (2, 2, '2023-11-15', 1, 1800.00);
+    (1, 1, '2023-04-01', 2, 2400),
+    (2, 2, '2023-11-15', 1, 1800);
 
 INSERT INTO Payments (BookingID, PaymentDate, Amount)
 VALUES
-    (1, '2023-04-05', 1200.00),
-    (2, '2023-11-20', 1800.00);
+    (1, '2023-04-05', 1200),
+    (2, '2023-11-20', 1800);
 
 INSERT INTO Registration (UserLogin, UserPassword, IsAdmin)
 VALUES
@@ -76,3 +76,5 @@ SELECT * FROM Payments;
 SELECT * FROM Registration;
 
 DROP DATABASE TourismCompanyDB;
+
+use Dormitory
