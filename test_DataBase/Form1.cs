@@ -25,6 +25,7 @@ namespace test_DataBase
     public partial class Form1 : Form
     {
         private readonly DataBase dataBase = new DataBase();
+        private bool admin;
         private int selectedRow;
 
         public Form1()
@@ -38,6 +39,11 @@ namespace test_DataBase
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public void SetAdminStatus(bool isAdmin)
+        {
+            admin = isAdmin;
         }
 
         /// <summary>
@@ -771,8 +777,11 @@ namespace test_DataBase
         {
             try
             {
-                AddFormTours addForm = new AddFormTours();
-                addForm.Show();
+                if (admin)
+                {
+                    AddFormTours addForm = new AddFormTours();
+                    addForm.Show();
+                }
             }
             catch (Exception ex)
             {
@@ -823,8 +832,11 @@ namespace test_DataBase
         {
             try
             {
-                DeleteRow(dataGridViewTours);
-                ClearFields();
+                if (admin)
+                {
+                    DeleteRow(dataGridViewTours);
+                    ClearFields();
+                }
             }
             catch (Exception ex)
             {
@@ -875,8 +887,11 @@ namespace test_DataBase
         {
             try
             {
-                Change(dataGridViewClients);
-                ClearFields();
+                if (admin)
+                {
+                    Change(dataGridViewClients);
+                    ClearFields();
+                }
             }
             catch (Exception ex)
             {

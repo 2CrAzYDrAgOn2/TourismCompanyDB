@@ -40,7 +40,8 @@ CREATE TABLE Payments (
 CREATE TABLE Registration (
 	UserID INT PRIMARY KEY IDENTITY(1,1),
 	UserLogin VARCHAR(50),
-	UserPassword VARCHAR(50)
+	UserPassword VARCHAR(50),
+	isAdmin bit
 );
 
 INSERT INTO Clients (FirstName, LastName, Email, Phone)
@@ -63,9 +64,10 @@ VALUES
     (1, '2023-04-05', 1200.00),
     (2, '2023-11-20', 1800.00);
 
-INSERT INTO Registration (UserLogin, UserPassword)
+INSERT INTO Registration (UserLogin, UserPassword, isAdmin)
 VALUES
-	('admin', 'admin');
+	('admin', 'admin', 1),
+	('user', 'user', 0);
 
 SELECT * FROM Clients;
 SELECT * FROM Tours;
