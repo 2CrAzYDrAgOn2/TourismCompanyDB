@@ -39,13 +39,13 @@ namespace test_DataBase
             var passwordUser = textBoxPassword.Text;
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
             DataTable dataTable = new DataTable();
-            string querystring = $"select UserID, UserLogin, UserPassword, isAdmin from Registration where UserLogin = '{loginUser}' and UserPassword = '{passwordUser}'";
+            string querystring = $"select UserID, UserLogin, UserPassword, IsAdmin from Registration where UserLogin = '{loginUser}' and UserPassword = '{passwordUser}'";
             SqlCommand sqlCommand = new SqlCommand(querystring, dataBase.GetConnection());
             sqlDataAdapter.SelectCommand = sqlCommand;
             sqlDataAdapter.Fill(dataTable);
             if (dataTable.Rows.Count == 1)
             {
-                bool isAdmin = Convert.ToBoolean(dataTable.Rows[0]["isAdmin"]);
+                bool isAdmin = Convert.ToBoolean(dataTable.Rows[0]["IsAdmin"]);
                 MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Form1 form1 = new Form1();
                 form1.SetAdminStatus(isAdmin);

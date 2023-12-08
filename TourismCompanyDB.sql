@@ -41,7 +41,7 @@ CREATE TABLE Registration (
 	UserID INT PRIMARY KEY IDENTITY(1,1),
 	UserLogin VARCHAR(50),
 	UserPassword VARCHAR(50),
-	isAdmin bit
+	IsAdmin bit
 );
 
 INSERT INTO Clients (FirstName, LastName, Email, Phone)
@@ -64,7 +64,7 @@ VALUES
     (1, '2023-04-05', 1200.00),
     (2, '2023-11-20', 1800.00);
 
-INSERT INTO Registration (UserLogin, UserPassword, isAdmin)
+INSERT INTO Registration (UserLogin, UserPassword, IsAdmin)
 VALUES
 	('admin', 'admin', 1),
 	('user', 'user', 0);
