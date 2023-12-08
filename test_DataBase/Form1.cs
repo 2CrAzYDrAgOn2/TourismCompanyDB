@@ -897,7 +897,7 @@ namespace test_DataBase
         {
             try
             {
-                Change(dataGridViewClients);
+                Change(dataGridViewTours);
                 ClearFields();
             }
             catch (Exception ex)
@@ -910,7 +910,7 @@ namespace test_DataBase
         {
             try
             {
-                Change(dataGridViewClients);
+                Change(dataGridViewBookings);
                 ClearFields();
             }
             catch (Exception ex)
@@ -923,7 +923,7 @@ namespace test_DataBase
         {
             try
             {
-                Change(dataGridViewClients);
+                Change(dataGridViewPayments);
                 ClearFields();
             }
             catch (Exception ex)
