@@ -5,6 +5,10 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 using iText.Kernel.Pdf;
+using System.IO;
+using System.Text;
+using iText.IO.Font;
+using iText.Kernel.Font;
 
 namespace test_DataBase
 {
@@ -661,10 +665,11 @@ namespace test_DataBase
         {
             try
             {
-                string filePath = "";
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "output.pdf");
                 var pdfWriter = new PdfWriter(filePath);
                 var pdfDocument = new PdfDocument(pdfWriter);
                 var pdfDoc = new iText.Layout.Document(pdfDocument);
+                PdfFont timesFont = PdfFontFactory.CreateFont("c:/windows/fonts/times.ttf", PdfEncodings.IDENTITY_H, true);
                 string title = "";
                 switch (dataGridView.Name)
                 {
@@ -684,14 +689,22 @@ namespace test_DataBase
                         title = "Данные выплат";
                         break;
                 }
-                pdfDoc.Add(new iText.Layout.Element.Paragraph(title));
+                pdfDoc.Add(new iText.Layout.Element.Paragraph(title).SetFont(timesFont).SetTextAlignment(iText.Layout.Properties.TextAlignment.CENTER));
+                var headerData = new StringBuilder();
+                int columnCount = dataGridView.Columns.Count;
+                for (int i = 0; i < columnCount - 1; i++)
+                {
+                    headerData.Append(dataGridView.Columns[i].HeaderText).Append(" ");
+                }
+                pdfDoc.Add(new iText.Layout.Element.Paragraph(headerData.ToString()).SetFont(timesFont));
                 foreach (DataGridViewRow row in dataGridView.Rows)
                 {
-                    foreach (DataGridViewCell cell in row.Cells)
+                    var rowData = new StringBuilder();
+                    for (int i = 0; i < columnCount - 1; i++)
                     {
-                        pdfDoc.Add(new iText.Layout.Element.Paragraph(cell.Value.ToString()));
+                        rowData.Append(row.Cells[i].Value.ToString()).Append(" ");
                     }
-                    pdfDoc.Add(new iText.Layout.Element.AreaBreak());
+                    pdfDoc.Add(new iText.Layout.Element.Paragraph(rowData.ToString()).SetFont(timesFont));
                 }
                 pdfDoc.Close();
                 MessageBox.Show("PDF успешно экспортирован.");
