@@ -400,7 +400,7 @@ namespace test_DataBase
                             if (rowStateClients == RowState.Deleted)
                             {
                                 var clientID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Clients where ClientID = {clientID}";
+                                var deleteQuery = $"delete from Clients where ClientID = '{clientID}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -426,7 +426,7 @@ namespace test_DataBase
                             if (rowStateTours == RowState.Deleted)
                             {
                                 var tourID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Tours where TourID = {tourID}";
+                                var deleteQuery = $"delete from Tours where TourID = '{tourID}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -453,7 +453,7 @@ namespace test_DataBase
                             if (rowStateBookings == RowState.Deleted)
                             {
                                 var bookingID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Bookings where BookingID = {bookingID}";
+                                var deleteQuery = $"delete from Bookings where BookingID = '{bookingID}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -480,7 +480,7 @@ namespace test_DataBase
                             if (rowStatePayments == RowState.Deleted)
                             {
                                 var paymentID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Payments where PaymentID = {paymentID}";
+                                var deleteQuery = $"delete from Payments where PaymentID = '{paymentID}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
