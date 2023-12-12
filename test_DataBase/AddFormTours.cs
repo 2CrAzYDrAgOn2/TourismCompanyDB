@@ -26,8 +26,8 @@ namespace test_DataBase
                 dataBase.OpenConnection();
                 var tourName = textBoxTourName.Text;
                 var destination = textBoxDestination.Text;
-                var startDate = textBoxStartDate.Text;
-                var endDate = textBoxEndDate.Text;
+                var startDate = textBoxStartDate.Value;
+                var endDate = textBoxEndDate.Value;
                 var price = textBoxPrice.Text;
                 var addQuery = $"insert into Tours (TourName, Destination, StartDate, EndDate, Price) values ('{tourName}', '{destination}', '{startDate}', '{endDate}', '{price}')";
                 var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());

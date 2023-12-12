@@ -37,10 +37,10 @@
             this.textBoxNumberOfPersons = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBoxBookingDate = new System.Windows.Forms.TextBox();
             this.textBoxTourIDBookings = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxClientIDBookings = new System.Windows.Forms.TextBox();
+            this.textBoxBookingDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -125,14 +125,6 @@
             this.label24.TabIndex = 45;
             this.label24.Text = "Номер тура:";
             // 
-            // textBoxBookingDate
-            // 
-            this.textBoxBookingDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxBookingDate.Location = new System.Drawing.Point(248, 426);
-            this.textBoxBookingDate.Name = "textBoxBookingDate";
-            this.textBoxBookingDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxBookingDate.TabIndex = 44;
-            // 
             // textBoxTourIDBookings
             // 
             this.textBoxTourIDBookings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -158,18 +150,26 @@
             this.textBoxClientIDBookings.Size = new System.Drawing.Size(391, 33);
             this.textBoxClientIDBookings.TabIndex = 40;
             // 
+            // textBoxBookingDate
+            // 
+            this.textBoxBookingDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxBookingDate.Location = new System.Drawing.Point(248, 426);
+            this.textBoxBookingDate.Name = "textBoxBookingDate";
+            this.textBoxBookingDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxBookingDate.TabIndex = 51;
+            // 
             // AddFormBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 729);
+            this.Controls.Add(this.textBoxBookingDate);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.textBoxTotalAmount);
             this.Controls.Add(this.textBoxNumberOfPersons);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.textBoxBookingDate);
             this.Controls.Add(this.textBoxTourIDBookings);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxClientIDBookings);
@@ -193,9 +193,9 @@
         private System.Windows.Forms.TextBox textBoxNumberOfPersons;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBoxBookingDate;
         private System.Windows.Forms.TextBox textBoxTourIDBookings;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxClientIDBookings;
+        private System.Windows.Forms.DateTimePicker textBoxBookingDate;
     }
 }

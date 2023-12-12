@@ -34,9 +34,9 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.textBoxAmount = new System.Windows.Forms.TextBox();
-            this.textBoxPaymentDate = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxBookingIDPayments = new System.Windows.Forms.TextBox();
+            this.textBoxPaymentDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -95,14 +95,6 @@
             this.textBoxAmount.Size = new System.Drawing.Size(391, 33);
             this.textBoxAmount.TabIndex = 44;
             // 
-            // textBoxPaymentDate
-            // 
-            this.textBoxPaymentDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPaymentDate.Location = new System.Drawing.Point(249, 384);
-            this.textBoxPaymentDate.Name = "textBoxPaymentDate";
-            this.textBoxPaymentDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPaymentDate.TabIndex = 43;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -120,15 +112,23 @@
             this.textBoxBookingIDPayments.Size = new System.Drawing.Size(391, 33);
             this.textBoxBookingIDPayments.TabIndex = 40;
             // 
+            // textBoxPaymentDate
+            // 
+            this.textBoxPaymentDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxPaymentDate.Location = new System.Drawing.Point(249, 384);
+            this.textBoxPaymentDate.Name = "textBoxPaymentDate";
+            this.textBoxPaymentDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPaymentDate.TabIndex = 47;
+            // 
             // AddFormPayments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 729);
+            this.Controls.Add(this.textBoxPaymentDate);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.textBoxAmount);
-            this.Controls.Add(this.textBoxPaymentDate);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBoxBookingIDPayments);
             this.Controls.Add(this.label1);
@@ -148,8 +148,8 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox textBoxAmount;
-        private System.Windows.Forms.TextBox textBoxPaymentDate;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxBookingIDPayments;
+        private System.Windows.Forms.DateTimePicker textBoxPaymentDate;
     }
 }

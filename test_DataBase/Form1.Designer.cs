@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panelControl = new System.Windows.Forms.Panel();
             this.buttonPDFClients = new System.Windows.Forms.Button();
@@ -43,7 +40,6 @@
             this.labelControl = new System.Windows.Forms.Label();
             this.panelRecord = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
@@ -55,7 +51,6 @@
             this.labelRecord = new System.Windows.Forms.Label();
             this.dataGridViewClients = new System.Windows.Forms.DataGridView();
             this.panelTitle = new System.Windows.Forms.Panel();
-            this.buttonSearchClients = new System.Windows.Forms.Button();
             this.buttonClearClients = new System.Windows.Forms.Button();
             this.buttonRefreshClients = new System.Windows.Forms.Button();
             this.textBoxSearchClients = new System.Windows.Forms.TextBox();
@@ -75,10 +70,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
-            this.textBoxEndDate = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBoxStartDate = new System.Windows.Forms.TextBox();
             this.textBoxDestination = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -87,7 +80,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewTours = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonSearchTours = new System.Windows.Forms.Button();
             this.buttonClearTours = new System.Windows.Forms.Button();
             this.buttonRefreshTours = new System.Windows.Forms.Button();
             this.textBoxSearchTours = new System.Windows.Forms.TextBox();
@@ -109,7 +101,6 @@
             this.textBoxNumberOfPersons = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBoxBookingDate = new System.Windows.Forms.TextBox();
             this.textBoxTourIDBookings = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -118,7 +109,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridViewBookings = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.buttonSearchBookings = new System.Windows.Forms.Button();
             this.buttonClearBookings = new System.Windows.Forms.Button();
             this.buttonRefreshBookings = new System.Windows.Forms.Button();
             this.textBoxSearchBookings = new System.Windows.Forms.TextBox();
@@ -137,7 +127,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.textBoxAmount = new System.Windows.Forms.TextBox();
-            this.textBoxPaymentDate = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxBookingIDPayments = new System.Windows.Forms.TextBox();
@@ -145,12 +134,15 @@
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridViewPayments = new System.Windows.Forms.DataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.buttonSearchPayments = new System.Windows.Forms.Button();
             this.buttonClearPayments = new System.Windows.Forms.Button();
             this.buttonRefreshPayments = new System.Windows.Forms.Button();
             this.textBoxSearchPayments = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
+            this.textBoxPhone = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxStartDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxEndDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxBookingDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxPaymentDate = new System.Windows.Forms.DateTimePicker();
             this.tabPage1.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelRecord.SuspendLayout();
@@ -173,31 +165,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPayments)).BeginInit();
             this.panel9.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem,
-            this.информацияToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(768, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // файлToolStripMenuItem
-            // 
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 22);
-            this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // информацияToolStripMenuItem
-            // 
-            this.информацияToolStripMenuItem.Name = "информацияToolStripMenuItem";
-            this.информацияToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
-            this.информацияToolStripMenuItem.Text = "Информация";
             // 
             // tabPage1
             // 
@@ -310,8 +277,8 @@
             // 
             // panelRecord
             // 
-            this.panelRecord.Controls.Add(this.label19);
             this.panelRecord.Controls.Add(this.textBoxPhone);
+            this.panelRecord.Controls.Add(this.label19);
             this.panelRecord.Controls.Add(this.label16);
             this.panelRecord.Controls.Add(this.label17);
             this.panelRecord.Controls.Add(this.textBoxEmail);
@@ -334,14 +301,6 @@
             this.label19.Size = new System.Drawing.Size(55, 13);
             this.label19.TabIndex = 14;
             this.label19.Text = "Телефон:";
-            // 
-            // textBoxPhone
-            // 
-            this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhone.Location = new System.Drawing.Point(130, 215);
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPhone.TabIndex = 12;
             // 
             // label16
             // 
@@ -436,7 +395,6 @@
             // 
             // panelTitle
             // 
-            this.panelTitle.Controls.Add(this.buttonSearchClients);
             this.panelTitle.Controls.Add(this.buttonClearClients);
             this.panelTitle.Controls.Add(this.buttonRefreshClients);
             this.panelTitle.Controls.Add(this.textBoxSearchClients);
@@ -446,21 +404,11 @@
             this.panelTitle.Size = new System.Drawing.Size(751, 73);
             this.panelTitle.TabIndex = 0;
             // 
-            // buttonSearchClients
-            // 
-            this.buttonSearchClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchClients.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchClients.Location = new System.Drawing.Point(526, 3);
-            this.buttonSearchClients.Name = "buttonSearchClients";
-            this.buttonSearchClients.Size = new System.Drawing.Size(67, 67);
-            this.buttonSearchClients.TabIndex = 4;
-            this.buttonSearchClients.UseVisualStyleBackColor = true;
-            // 
             // buttonClearClients
             // 
             this.buttonClearClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClearClients.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearClients.Location = new System.Drawing.Point(380, 3);
+            this.buttonClearClients.Location = new System.Drawing.Point(453, 3);
             this.buttonClearClients.Name = "buttonClearClients";
             this.buttonClearClients.Size = new System.Drawing.Size(67, 67);
             this.buttonClearClients.TabIndex = 3;
@@ -471,7 +419,7 @@
             // 
             this.buttonRefreshClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRefreshClients.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshClients.Location = new System.Drawing.Point(453, 3);
+            this.buttonRefreshClients.Location = new System.Drawing.Point(526, 3);
             this.buttonRefreshClients.Name = "buttonRefreshClients";
             this.buttonRefreshClients.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshClients.TabIndex = 2;
@@ -503,7 +451,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(769, 900);
@@ -621,13 +569,13 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBoxEndDate);
+            this.panel2.Controls.Add(this.textBoxStartDate);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.textBoxPrice);
-            this.panel2.Controls.Add(this.textBoxEndDate);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.textBoxStartDate);
             this.panel2.Controls.Add(this.textBoxDestination);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
@@ -665,14 +613,6 @@
             this.textBoxPrice.Size = new System.Drawing.Size(391, 33);
             this.textBoxPrice.TabIndex = 13;
             // 
-            // textBoxEndDate
-            // 
-            this.textBoxEndDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEndDate.Location = new System.Drawing.Point(130, 215);
-            this.textBoxEndDate.Name = "textBoxEndDate";
-            this.textBoxEndDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEndDate.TabIndex = 12;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -690,14 +630,6 @@
             this.label20.Size = new System.Drawing.Size(71, 13);
             this.label20.TabIndex = 10;
             this.label20.Text = "Назначение:";
-            // 
-            // textBoxStartDate
-            // 
-            this.textBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxStartDate.Location = new System.Drawing.Point(130, 176);
-            this.textBoxStartDate.Name = "textBoxStartDate";
-            this.textBoxStartDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxStartDate.TabIndex = 9;
             // 
             // textBoxDestination
             // 
@@ -766,7 +698,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.buttonSearchTours);
             this.panel3.Controls.Add(this.buttonClearTours);
             this.panel3.Controls.Add(this.buttonRefreshTours);
             this.panel3.Controls.Add(this.textBoxSearchTours);
@@ -776,21 +707,11 @@
             this.panel3.Size = new System.Drawing.Size(751, 73);
             this.panel3.TabIndex = 0;
             // 
-            // buttonSearchTours
-            // 
-            this.buttonSearchTours.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchTours.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchTours.Location = new System.Drawing.Point(526, 3);
-            this.buttonSearchTours.Name = "buttonSearchTours";
-            this.buttonSearchTours.Size = new System.Drawing.Size(67, 67);
-            this.buttonSearchTours.TabIndex = 4;
-            this.buttonSearchTours.UseVisualStyleBackColor = true;
-            // 
             // buttonClearTours
             // 
             this.buttonClearTours.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClearTours.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearTours.Location = new System.Drawing.Point(380, 3);
+            this.buttonClearTours.Location = new System.Drawing.Point(453, 3);
             this.buttonClearTours.Name = "buttonClearTours";
             this.buttonClearTours.Size = new System.Drawing.Size(67, 67);
             this.buttonClearTours.TabIndex = 3;
@@ -801,7 +722,7 @@
             // 
             this.buttonRefreshTours.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRefreshTours.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshTours.Location = new System.Drawing.Point(453, 3);
+            this.buttonRefreshTours.Location = new System.Drawing.Point(526, 3);
             this.buttonRefreshTours.Name = "buttonRefreshTours";
             this.buttonRefreshTours.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshTours.TabIndex = 2;
@@ -938,13 +859,13 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.textBoxBookingDate);
             this.panel5.Controls.Add(this.label25);
             this.panel5.Controls.Add(this.label26);
             this.panel5.Controls.Add(this.textBoxTotalAmount);
             this.panel5.Controls.Add(this.textBoxNumberOfPersons);
             this.panel5.Controls.Add(this.label23);
             this.panel5.Controls.Add(this.label24);
-            this.panel5.Controls.Add(this.textBoxBookingDate);
             this.panel5.Controls.Add(this.textBoxTourIDBookings);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.label8);
@@ -1007,14 +928,6 @@
             this.label24.Size = new System.Drawing.Size(69, 13);
             this.label24.TabIndex = 10;
             this.label24.Text = "Номер тура:";
-            // 
-            // textBoxBookingDate
-            // 
-            this.textBoxBookingDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxBookingDate.Location = new System.Drawing.Point(130, 176);
-            this.textBoxBookingDate.Name = "textBoxBookingDate";
-            this.textBoxBookingDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxBookingDate.TabIndex = 9;
             // 
             // textBoxTourIDBookings
             // 
@@ -1083,7 +996,6 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.buttonSearchBookings);
             this.panel6.Controls.Add(this.buttonClearBookings);
             this.panel6.Controls.Add(this.buttonRefreshBookings);
             this.panel6.Controls.Add(this.textBoxSearchBookings);
@@ -1093,21 +1005,11 @@
             this.panel6.Size = new System.Drawing.Size(751, 73);
             this.panel6.TabIndex = 0;
             // 
-            // buttonSearchBookings
-            // 
-            this.buttonSearchBookings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchBookings.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchBookings.Location = new System.Drawing.Point(526, 3);
-            this.buttonSearchBookings.Name = "buttonSearchBookings";
-            this.buttonSearchBookings.Size = new System.Drawing.Size(67, 67);
-            this.buttonSearchBookings.TabIndex = 4;
-            this.buttonSearchBookings.UseVisualStyleBackColor = true;
-            // 
             // buttonClearBookings
             // 
             this.buttonClearBookings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClearBookings.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearBookings.Location = new System.Drawing.Point(380, 3);
+            this.buttonClearBookings.Location = new System.Drawing.Point(453, 3);
             this.buttonClearBookings.Name = "buttonClearBookings";
             this.buttonClearBookings.Size = new System.Drawing.Size(67, 67);
             this.buttonClearBookings.TabIndex = 3;
@@ -1118,7 +1020,7 @@
             // 
             this.buttonRefreshBookings.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRefreshBookings.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshBookings.Location = new System.Drawing.Point(453, 3);
+            this.buttonRefreshBookings.Location = new System.Drawing.Point(526, 3);
             this.buttonRefreshBookings.Name = "buttonRefreshBookings";
             this.buttonRefreshBookings.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshBookings.TabIndex = 2;
@@ -1255,10 +1157,10 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.textBoxPaymentDate);
             this.panel8.Controls.Add(this.label27);
             this.panel8.Controls.Add(this.label28);
             this.panel8.Controls.Add(this.textBoxAmount);
-            this.panel8.Controls.Add(this.textBoxPaymentDate);
             this.panel8.Controls.Add(this.label12);
             this.panel8.Controls.Add(this.label13);
             this.panel8.Controls.Add(this.textBoxBookingIDPayments);
@@ -1294,14 +1196,6 @@
             this.textBoxAmount.Name = "textBoxAmount";
             this.textBoxAmount.Size = new System.Drawing.Size(391, 33);
             this.textBoxAmount.TabIndex = 9;
-            // 
-            // textBoxPaymentDate
-            // 
-            this.textBoxPaymentDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPaymentDate.Location = new System.Drawing.Point(130, 137);
-            this.textBoxPaymentDate.Name = "textBoxPaymentDate";
-            this.textBoxPaymentDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPaymentDate.TabIndex = 8;
             // 
             // label12
             // 
@@ -1362,7 +1256,6 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.buttonSearchPayments);
             this.panel9.Controls.Add(this.buttonClearPayments);
             this.panel9.Controls.Add(this.buttonRefreshPayments);
             this.panel9.Controls.Add(this.textBoxSearchPayments);
@@ -1372,21 +1265,11 @@
             this.panel9.Size = new System.Drawing.Size(751, 73);
             this.panel9.TabIndex = 0;
             // 
-            // buttonSearchPayments
-            // 
-            this.buttonSearchPayments.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearchPayments.Image = global::test_DataBase.Properties.Resources.free_icon_magnifier_2319177__1_;
-            this.buttonSearchPayments.Location = new System.Drawing.Point(526, 3);
-            this.buttonSearchPayments.Name = "buttonSearchPayments";
-            this.buttonSearchPayments.Size = new System.Drawing.Size(67, 67);
-            this.buttonSearchPayments.TabIndex = 4;
-            this.buttonSearchPayments.UseVisualStyleBackColor = true;
-            // 
             // buttonClearPayments
             // 
             this.buttonClearPayments.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonClearPayments.Image = global::test_DataBase.Properties.Resources.free_icon_eraser_67795061;
-            this.buttonClearPayments.Location = new System.Drawing.Point(380, 3);
+            this.buttonClearPayments.Location = new System.Drawing.Point(453, 3);
             this.buttonClearPayments.Name = "buttonClearPayments";
             this.buttonClearPayments.Size = new System.Drawing.Size(67, 67);
             this.buttonClearPayments.TabIndex = 3;
@@ -1397,7 +1280,7 @@
             // 
             this.buttonRefreshPayments.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRefreshPayments.Image = global::test_DataBase.Properties.Resources.free_icon_updating_2990003;
-            this.buttonRefreshPayments.Location = new System.Drawing.Point(453, 3);
+            this.buttonRefreshPayments.Location = new System.Drawing.Point(526, 3);
             this.buttonRefreshPayments.Name = "buttonRefreshPayments";
             this.buttonRefreshPayments.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshPayments.TabIndex = 2;
@@ -1423,19 +1306,56 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Платежи";
             // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxPhone.Location = new System.Drawing.Point(130, 215);
+            this.textBoxPhone.Mask = "+7 999 999-99-99";
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPhone.TabIndex = 15;
+            // 
+            // textBoxStartDate
+            // 
+            this.textBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxStartDate.Location = new System.Drawing.Point(130, 176);
+            this.textBoxStartDate.Name = "textBoxStartDate";
+            this.textBoxStartDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxStartDate.TabIndex = 16;
+            // 
+            // textBoxEndDate
+            // 
+            this.textBoxEndDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxEndDate.Location = new System.Drawing.Point(130, 215);
+            this.textBoxEndDate.Name = "textBoxEndDate";
+            this.textBoxEndDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEndDate.TabIndex = 17;
+            // 
+            // textBoxBookingDate
+            // 
+            this.textBoxBookingDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxBookingDate.Location = new System.Drawing.Point(130, 176);
+            this.textBoxBookingDate.Name = "textBoxBookingDate";
+            this.textBoxBookingDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxBookingDate.TabIndex = 17;
+            // 
+            // textBoxPaymentDate
+            // 
+            this.textBoxPaymentDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxPaymentDate.Location = new System.Drawing.Point(130, 137);
+            this.textBoxPaymentDate.Name = "textBoxPaymentDate";
+            this.textBoxPaymentDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPaymentDate.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 926);
+            this.ClientSize = new System.Drawing.Size(768, 898);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Туристическая фирма";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panelControl.ResumeLayout(false);
@@ -1470,15 +1390,10 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem информацияToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.Button buttonSaveClients;
@@ -1494,7 +1409,6 @@
         private System.Windows.Forms.Label labelRecord;
         private System.Windows.Forms.DataGridView dataGridViewClients;
         private System.Windows.Forms.Panel panelTitle;
-        private System.Windows.Forms.Button buttonSearchClients;
         private System.Windows.Forms.Button buttonClearClients;
         private System.Windows.Forms.Button buttonRefreshClients;
         private System.Windows.Forms.TextBox textBoxSearchClients;
@@ -1521,7 +1435,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridViewTours;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button buttonSearchTours;
         private System.Windows.Forms.Button buttonClearTours;
         private System.Windows.Forms.Button buttonRefreshTours;
         private System.Windows.Forms.TextBox textBoxSearchTours;
@@ -1544,7 +1457,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridViewBookings;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button buttonSearchBookings;
         private System.Windows.Forms.Button buttonClearBookings;
         private System.Windows.Forms.Button buttonRefreshBookings;
         private System.Windows.Forms.TextBox textBoxSearchBookings;
@@ -1567,13 +1479,11 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dataGridViewPayments;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button buttonSearchPayments;
         private System.Windows.Forms.Button buttonClearPayments;
         private System.Windows.Forms.Button buttonRefreshPayments;
         private System.Windows.Forms.TextBox textBoxSearchPayments;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBoxEmail;
@@ -1581,10 +1491,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox textBoxPrice;
-        private System.Windows.Forms.TextBox textBoxEndDate;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBoxStartDate;
         private System.Windows.Forms.TextBox textBoxDestination;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
@@ -1592,11 +1500,14 @@
         private System.Windows.Forms.TextBox textBoxNumberOfPersons;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBoxBookingDate;
         private System.Windows.Forms.TextBox textBoxTourIDBookings;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox textBoxAmount;
-        private System.Windows.Forms.TextBox textBoxPaymentDate;
+        private System.Windows.Forms.MaskedTextBox textBoxPhone;
+        private System.Windows.Forms.DateTimePicker textBoxStartDate;
+        private System.Windows.Forms.DateTimePicker textBoxEndDate;
+        private System.Windows.Forms.DateTimePicker textBoxBookingDate;
+        private System.Windows.Forms.DateTimePicker textBoxPaymentDate;
     }
 }

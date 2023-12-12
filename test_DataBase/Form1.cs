@@ -533,8 +533,8 @@ namespace test_DataBase
                         var tourID = textBoxTourID.Text;
                         var tourName = textBoxTourName.Text;
                         var destination = textBoxDestination.Text;
-                        var startDate = textBoxStartDate.Text;
-                        var endDate = textBoxEndDate.Text;
+                        var startDate = textBoxStartDate.Value;
+                        var endDate = textBoxEndDate.Value;
                         var price = textBoxPrice.Text;
                         dataGridView.Rows[selectedRowIndex].SetValues(tourID, tourName, destination, startDate, endDate, price);
                         dataGridView.Rows[selectedRowIndex].Cells[6].Value = RowState.Modified;
@@ -544,7 +544,7 @@ namespace test_DataBase
                         var bookingID = textBoxBookingID.Text;
                         var clientIDBookings = textBoxClientIDBookings.Text;
                         var tourIDBookings = textBoxTourIDBookings.Text;
-                        var bookingDate = textBoxBookingDate.Text;
+                        var bookingDate = textBoxBookingDate.Value;
                         var numberOfPersons = textBoxNumberOfPersons.Text;
                         var totalAmount = textBoxTotalAmount.Text;
                         dataGridView.Rows[selectedRowIndex].SetValues(bookingID, clientIDBookings, tourIDBookings, bookingDate, numberOfPersons, totalAmount);
@@ -554,7 +554,7 @@ namespace test_DataBase
                     case "dataGridViewPayments":
                         var paymentID = textBoxPaymentID.Text;
                         var bookingIDPayments = textBoxBookingIDPayments.Text;
-                        var paymentDate = textBoxPaymentDate.Text;
+                        var paymentDate = textBoxPaymentDate.Value;
                         var amount = textBoxAmount.Text;
                         dataGridView.Rows[selectedRowIndex].SetValues(paymentID, bookingIDPayments, paymentDate, amount);
                         dataGridView.Rows[selectedRowIndex].Cells[4].Value = RowState.Modified;

@@ -34,13 +34,13 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
-            this.textBoxEndDate = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBoxStartDate = new System.Windows.Forms.TextBox();
             this.textBoxDestination = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxTourName = new System.Windows.Forms.TextBox();
+            this.textBoxEndDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxStartDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -99,14 +99,6 @@
             this.textBoxPrice.Size = new System.Drawing.Size(391, 33);
             this.textBoxPrice.TabIndex = 48;
             // 
-            // textBoxEndDate
-            // 
-            this.textBoxEndDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEndDate.Location = new System.Drawing.Point(248, 463);
-            this.textBoxEndDate.Name = "textBoxEndDate";
-            this.textBoxEndDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEndDate.TabIndex = 47;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -124,14 +116,6 @@
             this.label20.Size = new System.Drawing.Size(71, 13);
             this.label20.TabIndex = 45;
             this.label20.Text = "Назначение:";
-            // 
-            // textBoxStartDate
-            // 
-            this.textBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxStartDate.Location = new System.Drawing.Point(248, 424);
-            this.textBoxStartDate.Name = "textBoxStartDate";
-            this.textBoxStartDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxStartDate.TabIndex = 44;
             // 
             // textBoxDestination
             // 
@@ -158,18 +142,34 @@
             this.textBoxTourName.Size = new System.Drawing.Size(391, 33);
             this.textBoxTourName.TabIndex = 40;
             // 
+            // textBoxEndDate
+            // 
+            this.textBoxEndDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxEndDate.Location = new System.Drawing.Point(248, 463);
+            this.textBoxEndDate.Name = "textBoxEndDate";
+            this.textBoxEndDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEndDate.TabIndex = 52;
+            // 
+            // textBoxStartDate
+            // 
+            this.textBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxStartDate.Location = new System.Drawing.Point(248, 424);
+            this.textBoxStartDate.Name = "textBoxStartDate";
+            this.textBoxStartDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxStartDate.TabIndex = 51;
+            // 
             // AddFormTours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 729);
+            this.Controls.Add(this.textBoxEndDate);
+            this.Controls.Add(this.textBoxStartDate);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.textBoxPrice);
-            this.Controls.Add(this.textBoxEndDate);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.textBoxStartDate);
             this.Controls.Add(this.textBoxDestination);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxTourName);
@@ -190,12 +190,12 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox textBoxPrice;
-        private System.Windows.Forms.TextBox textBoxEndDate;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBoxStartDate;
         private System.Windows.Forms.TextBox textBoxDestination;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxTourName;
+        private System.Windows.Forms.DateTimePicker textBoxEndDate;
+        private System.Windows.Forms.DateTimePicker textBoxStartDate;
     }
 }

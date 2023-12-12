@@ -26,7 +26,7 @@ namespace test_DataBase
                 if (int.TryParse(textBoxBookingIDPayments.Text, out int bookingID))
                 {
                     dataBase.OpenConnection();
-                    var paymentDate = textBoxPaymentDate.Text;
+                    var paymentDate = textBoxPaymentDate.Value;
                     var amount = textBoxAmount.Text;
                     var addQuery = $"insert into Payments (BookingID, PaymentDate, Amount) values ('{bookingID}', '{paymentDate}', '{amount}')";
                     var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());

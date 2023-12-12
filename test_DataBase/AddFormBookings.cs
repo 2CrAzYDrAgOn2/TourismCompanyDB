@@ -26,7 +26,7 @@ namespace test_DataBase
                 if (int.TryParse(textBoxClientIDBookings.Text, out int clientID) && int.TryParse(textBoxTourIDBookings.Text, out int tourID) && int.TryParse(textBoxNumberOfPersons.Text, out int numberOfPersons))
                 {
                     dataBase.OpenConnection();
-                    var bookingDate = textBoxBookingDate.Text;
+                    var bookingDate = textBoxBookingDate.Value;
                     var totalAmount = textBoxTotalAmount.Text;
                     var addQuery = $"insert into Bookings (ClientID, TourID, BookingDate, NumberOfPersons, TotalAmount) values ('{clientID}', '{tourID}', '{bookingDate}', '{numberOfPersons}', '{totalAmount}')";
                     var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());

@@ -32,13 +32,13 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
+            this.textBoxPhone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // buttonSave
@@ -79,14 +79,6 @@
             this.label19.Size = new System.Drawing.Size(55, 13);
             this.label19.TabIndex = 29;
             this.label19.Text = "Телефон:";
-            // 
-            // textBoxPhone
-            // 
-            this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhone.Location = new System.Drawing.Point(247, 464);
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPhone.TabIndex = 28;
             // 
             // label16
             // 
@@ -139,13 +131,22 @@
             this.textBoxFirstName.Size = new System.Drawing.Size(391, 33);
             this.textBoxFirstName.TabIndex = 22;
             // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxPhone.Location = new System.Drawing.Point(247, 464);
+            this.textBoxPhone.Mask = "+7 999 999-99-99";
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPhone.TabIndex = 30;
+            // 
             // AddFormClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 729);
-            this.Controls.Add(this.label19);
             this.Controls.Add(this.textBoxPhone);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.textBoxEmail);
@@ -167,12 +168,12 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxFirstName;
+        private System.Windows.Forms.MaskedTextBox textBoxPhone;
     }
 }
