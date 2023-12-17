@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="test_DataBase.Form1">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>/8WuTgYYsLZEQL8QCALgSQPPPEVhmcjvkoSwyWwrJzU=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="test_DataBase.LogIn">
+    <Position X="4" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAACABACAEAAAAAACAAAQCAEAAgAAAIQQCAIAEAAA=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="test_DataBase.SignUp">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAEAABACAEQAAAIACAAAQCAAAAgAAAAQACAAAEAAA=</HashCode>
+      <FileName>SignUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="test_DataBase.AddFormTours">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cAAAAAAAACAEABAAAAKgAAACAAAADAACIAQAAAAAABA=</HashCode>
+      <FileName>AddFormTours.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="test_DataBase.AddFormPayments">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAAAAAAAACAEABAAAACAAQACAABABAAAIAAQAAAAABA=</HashCode>
+      <FileName>AddFormPayments.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="test_DataBase.AddFormClients">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAAAAAQAACAEABAAAACAAABCAAAABABAIAAAAAAAACA=</HashCode>
+      <FileName>AddFormClients.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="test_DataBase.AddFormBookings">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hwAABAAAACAEABAAAACAAAACIAAABACAIAAAgAACAAA=</HashCode>
+      <FileName>AddFormBookings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="test_DataBase.DataBase">
+    <Position X="0.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAQAAEAAAAAAAABAAAAA=</HashCode>
+      <FileName>DataBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="test_DataBase.Program">
+    <Position X="2.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="test_DataBase.RowState">
+    <Position X="4" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAABAAEAAAAAAAAAAQAAAAEAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
